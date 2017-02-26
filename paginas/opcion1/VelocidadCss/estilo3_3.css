@@ -1,0 +1,73 @@
+body {
+   background:  linear-gradient(270deg, darkgrey, white);  /* ponemos un fondo con degradado */
+    overflow-x: hidden;     /* quitamos la barra de desplazamiento cuando los coches se salga de la pantalla, 
+                            para no verlo de ninguna manera */
+}
+.coche {    /* CLASE COCHE */
+    
+    background-image: url(recursos/coche.png);  /* ponemos el coche de fondo en el div */
+    width: 520px;
+    height: 250px;
+    position: absolute;
+    transform: scale(0.5);  /* lo hacemos más pequeño */
+}
+h1 {
+    line-height: 3em;           /* fondo a los h1 y coches aprovechando el gran espacio entre líenas que asignamos*/
+    background-color: bisque
+}
+
+#coche1 {       /* COCHE 1 */
+    left: -500px;                  /* y nos lo llevamos este izquierda fuera de la pantalla */
+    top: -50px;
+    filter: blur(4px);      /* aplicamos filtro desenfoque */
+    animation-iteration-count: infinite;   /* hacemos que pase infinitas veces */
+    animation-name: cocheSeMueve;   /* nombre de la animación */
+    animation-duration: 10s;             /* 10 segundos tarda en hacer el recorrido el coche */
+    animation-timing-function: linear;      /* velocidad constante */
+}
+#coche2 {       /* COCHE 2 */
+    left: -500px;                  /* y nos lo llevamos a la derecha fuera de la pantalla */
+    top: 70px;
+    filter: grayscale(90%);     /* filtro escala de grises  */
+    animation-iteration-count: infinite;   /* hacemos que pase infinidad de veces */
+    animation-name: cocheSeMueve;   /* nombre de la anomación */
+    animation-duration: 10s;             /* 10 segundos tarda en hacer el recorrido el coche */
+    animation-timing-function:cubic-bezier(1, .14, 0, .86);     /* empieza muy despacio, acelera brutalemnte y se frena bruscamente al final*/
+}
+#coche3 {       /* COCHE 3 */
+    left: -500px;                  /* y nos lo llevamos a la derecha fuera de la pantalla */
+    top: 190px;
+    filter: invert(100%);           /* filtro que invierte los colores */
+    animation-iteration-count: infinite;   /* hacemos que pase infinidad de veces */
+    animation-name: cocheSeMueve;   /* nombre de la anomación */
+    animation-duration: 10s;             /* 10 segundos tarda en hacer el recorrido el coche */
+    animation-timing-function:ease-in;  /* Empieza despacio y se va acelerando progresivamente hasta el final */
+}
+#coche4 {       /* COCHE 4 */
+    left: -500px;                  /* y nos lo llevamos a la derecha fuera de la pantalla */
+    top: 310px;
+    filter: sepia(100%);        /* filtro sepia  */
+    animation-iteration-count: infinite;   /* hacemos que pase infinidad de veces */
+    animation-name: cocheSeMueve;   /* nombre de la anomación */
+    animation-duration: 10s;             /* 10 segundos tarda en hacer el recorrido el coche */
+    animation-timing-function:ease-out; /* Empieza deprisa y se va desacelerando progresivamente hasta el final */
+}
+#coche5 {       /* COCHE 5 */
+    left: -500px;                  /* y nos lo llevamos a la derecha fuera de la pantalla */
+    top: 430px;
+    filter: hue-rotate(95deg);      /* filtro de rotación del color, 95 grados es el caso */
+    animation-iteration-count: infinite;   /* hacemos que pase infinidad de veces */
+    animation-name: cocheSeMueve;   /* nombre de la anomación */
+    animation-duration: 10s;             /* 10 segundos tarda en hacer el recorrido el coche */
+    animation-timing-function:steps(6, end);   /* lo hacemos paso a paso, en total 6 pasos hasta el final */
+}
+
+@keyframes cocheSeMueve {   /* animación del coche 1, desde la posición -250px hasta la 1100px */
+                   
+    from {                  
+        left: -250px;
+    }
+    to {
+        left: 1100px;
+    }
+}

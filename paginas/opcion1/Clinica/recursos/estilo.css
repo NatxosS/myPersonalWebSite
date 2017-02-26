@@ -1,0 +1,194 @@
+            /* ----------  IMPORTACIONES DE FUENTES ----------- */
+
+@font-face {
+    font-family: "indie_flower";
+    src: url('Indie_Flower/IndieFlower.ttf');
+}
+@font-face {                          
+    font-family: "oswald";
+    src: url('Oswald/Oswald-Bold.ttf');
+}
+
+body {
+    background: white;
+    background:  radial-gradient(center top, ellipse, #fff 80%, darkgrey, #000000);         /* ponemos un fondo radiante para el body */
+    background: -o-radial-gradient(center top, ellipse, #fff 80%, darkgrey, #000000); 
+    background: -moz-radial-gradient(center top, ellipse, #fff 80%, darkgrey, #000000); 
+    background: -webkit-radial-gradient(center top, ellipse, #fff 80%, darkgrey, #000000); 
+    color: aquamarine;
+    text-indent: 25px;
+}
+    header {
+        background: #05a1dc;
+        background: linear-gradient(290deg, #05a1dc, lightgrey 95%);
+        height: 190px;
+        color: aliceblue;
+        z-index: 1;
+        box-shadow: 10px 10px 5px grey;     /* le ponemos sombra a la cabecra  */
+    }
+        header h1 {
+            font-size: 4em;
+            font-family:oswald;
+            line-height: 1em;
+            text-shadow: 20px 10px 12px black
+        }
+
+    #barraNav {
+        z-index: 4;                         /* el navegador siempre estará encima de header, section y aside */
+        color: beige;
+        top: 0px;
+        font-family: monospace;
+              /* le ponemos sombra a la barra de navegación */
+    }
+
+        #barraNav ul {
+            padding-top: 0em;
+            font-size: 2em;
+            list-style: none;
+            display: block; 
+            }
+            #barraNav ul li {
+                display: block;
+                margin-top: 10px;
+                text-align: center;
+                vertical-align: middle;
+                background: rgba(39, 39, 39, 1);
+                box-shadow: 3px 10px 20px black; 
+            }
+                #barraNav ul li a {
+                    display: block;     /* convertimos en bloque para que el enlace ocupe toda la celda */
+                    text-decoration: none;
+                    text-decoration-line: none;
+                    color: beige;
+                    height: 50px;
+                    border-radius: 10px;
+                    border: 1px solid lightblue;
+                }
+                #barraNav ul li a:hover {
+                    color: lightblue;
+                    box-shadow: 10px 10px 20px lightblue;  /* con esta sombra le damos el efecto de que se enciende a cada enlace 
+                                                                de la barra de navegación  */
+                    /*border-radius: 10px;*/
+                    text-decoration-line: none;
+                    background: rgba(39, 39, 39, 1);
+                }
+    section {
+        color: white;
+        margin-top: 50px;
+        font-family:serif;
+        padding-bottom: 20px;
+    }
+    #section {
+        background-color: rgba(56, 56, 88, 1); 
+        box-shadow: 10px 10px 20px black;       /* sombras a section */
+        padding-right: 5px
+    }
+        section img {
+            display: block;
+            margin: 0 auto 0 auto;
+        }
+        section form {
+            display: block;
+            margin: 25px;
+            text-indent: 0px;
+            padding-bottom: 25px;
+        }
+            section form #lapellidos {
+            margin-left: 10px;
+        }
+        section figcaption {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            color:aquamarine;
+            font-family: indie_flower;
+            text-align: center
+        }
+        section h1 {
+            padding-top: 25px;
+            padding-left: 10px;
+            text-align: center
+        }
+        section h1::first-letter {   /* ponemos letra capital al titulo de cada sección  */
+            font-size: 2em;
+        }
+        section #titulos figure {       /* indicamos una posicion respecto a la que deberia ocupar */
+            position: relative;
+            top:-20px;
+            right: -400px
+        }
+        #titulos {
+            column-count: 2;                    /* ponemos 2 columnas a la caja  de los títulos (la caja la he tenido que añadir) */
+            column-rule: 2px solid lightblue;       /* línea separadora */
+            -moz-column-count: 2;
+            margin: 10px;
+        }
+
+                /* usamos los pseudoselectores para indicar que queremos cambiar el color de la primera línea de las experiencias */
+
+#titulos p:nth-child(5)::first-line, #titulos p:last-child::first-line, #titulos p:nth-child(4)::first-line, p:nth-child(6)::first-line {
+    color: yellow
+}
+
+        /* usamos los pseudoselectores para indicar que cambien los colores de los 3 primeros elementos p (estudios) */
+
+#titulos p:first-child, #titulos p:nth-child(2), #titulos p:nth-child(3) {
+    color: yellow
+}
+        .colegiado {
+            margin-top: 30px;
+            margin-right: 50px;
+            margin-left: 50px;
+            color: lightblue
+        }
+        .boton {
+            background: linear-gradient(165deg, darkgrey, lightgrey);       /* hemos creado una clase para los botones que tenemos en el formulario y aplicarles un fondo con gradiente */
+        }
+        .boton:hover {
+            background: linear-gradient(165deg, lightgrey, black);      /* cambiamos el color del fondo del gradiente y del texto */
+            color:white;
+            box-shadow: 5px 5px 5px black
+        }
+aside {
+    margin-top: 20px;
+    color: black;
+    height: auto;
+    font-family: monospace;
+    background: linear-gradient(290deg, orange, white);
+    box-shadow: 7px 7px 25px orange;                        /* gradiente y sombra para el aside */
+}
+        aside h1 {
+            padding-top: 10px;
+            font-size: 1.75em;
+        }
+        aside hgroup {
+            margin-left: 8px;
+        }
+        aside hgroup h2::first-letter {   /* ponemos letra capital al titulo de cada noticia  */
+            font-size: 1.5em;
+            margin-right: 3px
+        }
+        aside hgroup h3 {   /* ponemos letra capital al titulo de cada noticia  */
+            font-size: 1.25em;
+        }
+
+        aside a {
+            margin-left: 25%;
+        }
+footer {
+    margin-left: 75px;
+    margin-top: 50px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+    footer p {
+        color: rgba(3, 27, 49, 1);
+    }
+    footer ul li a img {
+        display: inline;
+    }
+    footer ul li a {
+        text-decoration: none;
+        text-decoration-line: none;
+        color: rgba(3, 27, 49, 1);
+        border: 1px solid white !important;
+    }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Rompe Destrozos - Contacto</title>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="../estilo.css" type="text/css" />
+    <link rel="icon" type="image/png" href="../iconocapas/favicon.png" />
+    <link href="../../css/bootstrap.min.css" rel="stylesheet"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div class="container">  
+        <header class="row">
+            <div class="col-lg-9 col-md-8 col-sm-6 col-xs-4">
+                <h1>Clínica Rompe Destrozos</h1>
+            </div>
+            <div id="logo" class="col-lg-3 col-sm-2 col-xs-2">
+                <a href="../../clinica.html"><img src="../iconocapas/icono1.png" alt="Logo (Cuadrado sobre cubo más grande)"></a>
+            </div>
+        </header>
+        <nav class="row">
+            <div id="barraNav" class="col-lg-10">
+                <ul class="nav navbar-nav">
+                    <li><a href="presentacion.html">PRESENTACIÓN</a></li>
+                    <li><a href="../../clinica.html">SERVICIOS</a></li> 
+                    <li><a href="../../clinica.html">LOCALIZACIÓN </a></li> 
+                    <li><a href="#">CONTACTO</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="contenidoPrincipal" class="row">
+            <section class="col-lg-8 col-md-7">
+                <div id="section" class="row">
+                    <h1>Contacta con nosotros</h1>
+                    <article>    
+                        <form class="form-horizontal" role="form">     <!-- formulario horizontal de bootstrap  -->
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="nombre">Nombre: </label>
+                                <div class="col-sm-8">
+                                    <input style="box-shadow: 5px 5px 5px black" type="text" class="form-control" name="nombre" id="nombre" required />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="apellidos">Apellidos: </label>
+                                <div class="col-sm-8">
+                                    <input  style="box-shadow: 5px 5px 5px black" type="text" class="form-control" name="apellidos" id="apellidos" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label" for="miemail">Email: </label>
+                                <div class="col-sm-8">
+                                    <input style="box-shadow: 5px 5px 5px black" type="email" class="form-control" name="miemail" id="miemail" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="comentarios">Comente aquí lo que considere oportuno: </label><br />
+                                <textarea style="box-shadow: 5px 5px 5px black" name="comentarios" id="comentarios" class="form-control" rows="4">Introduzca un comentario...</textarea><br />
+                                <br />
+                                <button type="submit" class="btn btn-default">Enviar consulta</button> <button type="reset" class="btn btn-default">Borrar todo</button>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+                <div class="row">
+                    <footer class="col-lg-12 col-md-12">   <!-- enlaces siguiente y anterior con bootstrap  -->
+                        <ul class="pager">
+                            <li><a href="presentacion.html"><img src="../flechaIzquierda2.png" alt="Enlace a presentacion" /></a></li>
+                            <li><a href="../../clinica.html"><img src="../flechaDerecha2.png" alt="Enlace a página principal" /></a></li>
+                        </ul><
+                        <br />
+                        <p>Estamos en Contacto - <a href="../mapaSitio.png">"Mapa del sitio"</a></p>
+                    </footer>
+                </div>
+            </section>
+            <aside class="col-lg-3 col-md-3 col-sm-5 col-xs-12 col-lg-offset-1 col-md-offset-1">
+                <h1>Noticias y anuncios</h1>
+                <hr />
+                <hgroup>
+                    <h2>Nueva página web de Don Eustaquio</h2>
+                    <h3>Por fin lleguo el momento tan esperado por todos. Don Eustaquio Federico reabre su página web y esta wez si!! Adaptada a los nuevos tiempos que corren!! HTML5 y CSS!! y por supuesto su antiguo logo en 3D.</h3>
+                </hgroup>
+                <figure>
+                    <img src="../iconocapas/icono1.png" alt="Nuevo icono de Don Eustaquio" />
+                    <figcaption>Nuevo icono de Don Eustaquio</figcaption>
+                </figure>
+                <hgroup>
+                    <h2>Titulo Noticia2</h2>
+                    <h3>Subtitulo Noticia2.</h3>
+                </hgroup>
+                <hr />
+                <a href=""><img src="../noticiasViejas.png" alt="Apertura a noticias más viejas" /></a>
+                
+            </aside>
+        </div>
+    </div>
+</body>
+
+</html>

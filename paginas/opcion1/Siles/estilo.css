@@ -1,0 +1,268 @@
+body{
+	text-align:center;
+	/*background: #222222;*/
+	font-family: Arial;                     /* Fondo con editor de gradientes de la pagina web http://www.cssmatic.com/ */
+	background: rgba(76,76,76,1);
+background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 1%, rgba(89,89,89,0.99) 12%, rgba(102,102,102,0.98) 25%, rgba(43,43,43,0.98) 30%, rgba(28,28,28,0.95) 75%, rgba(17,17,17,0.94) 85%, rgba(0,0,0,0.93) 99%, rgba(19,19,19,0.93) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(0%, rgba(71,71,71,1)), color-stop(1%, rgba(44,44,44,1)), color-stop(12%, rgba(89,89,89,0.99)), color-stop(25%, rgba(102,102,102,0.98)), color-stop(30%, rgba(43,43,43,0.98)), color-stop(75%, rgba(28,28,28,0.95)), color-stop(85%, rgba(17,17,17,0.94)), color-stop(99%, rgba(0,0,0,0.93)), color-stop(100%, rgba(19,19,19,0.93)));
+background: -webkit-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 1%, rgba(89,89,89,0.99) 12%, rgba(102,102,102,0.98) 25%, rgba(43,43,43,0.98) 30%, rgba(28,28,28,0.95) 75%, rgba(17,17,17,0.94) 85%, rgba(0,0,0,0.93) 99%, rgba(19,19,19,0.93) 100%);
+background: -o-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 1%, rgba(89,89,89,0.99) 12%, rgba(102,102,102,0.98) 25%, rgba(43,43,43,0.98) 30%, rgba(28,28,28,0.95) 75%, rgba(17,17,17,0.94) 85%, rgba(0,0,0,0.93) 99%, rgba(19,19,19,0.93) 100%);
+background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 1%, rgba(89,89,89,0.99) 12%, rgba(102,102,102,0.98) 25%, rgba(43,43,43,0.98) 30%, rgba(28,28,28,0.95) 75%, rgba(17,17,17,0.94) 85%, rgba(0,0,0,0.93) 99%, rgba(19,19,19,0.93) 100%);
+background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(71,71,71,1) 0%, rgba(44,44,44,1) 1%, rgba(89,89,89,0.99) 12%, rgba(102,102,102,0.98) 25%, rgba(43,43,43,0.98) 30%, rgba(28,28,28,0.95) 75%, rgba(17,17,17,0.94) 85%, rgba(0,0,0,0.93) 99%, rgba(19,19,19,0.93) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+}
+
+a{
+	text-decoration: none;       /* afecta a todos los enlaces de las paginas afectadas por el css*/
+}
+
+     /* ---------- Contenedor de la pagina entera --------*/ 
+
+#container{
+	width: 1200px;
+	margin: 0px auto;
+	text-align: left;
+	border-bottom-color: red;
+}
+
+       /* ---------- Cabecera --------*/ 
+
+#header{
+	background: url("recursosIndex/fondoCabecera.jpg") top left no-repeat;
+	height: 160px;
+}
+
+#header a{
+	width: 1200px;
+	height: 160;
+	display: block;
+	margin: 0px;
+	padding: 0px;
+}
+
+#header a span{
+	visibility: hidden;
+}
+
+    /* ------------ menu  -----------*/
+
+#menu{
+	
+	width: 800px;
+	height: 75px;
+	margin: 0px auto;
+	z-index:1;
+	background: url("recursosIndex/fondoMenu.jpg") top center no-repeat;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+	table{
+		
+		width: 800px;
+		margin: 0px auto;
+		height: 75px;
+	}
+	
+		#menu table td {
+			width: 100px; 
+			text-align: center;
+			font-size: 20pt;
+			line-height: 250%;
+		}
+		
+		#menu table td:hover{
+			background: url("recursosIndex/fondoCelda.jpg") no-repeat;	
+		}
+		
+			#menu table td a{
+				width: 167px;
+				height: 71px;
+				display: block;
+			}
+			
+			#menu table td a:hover{
+				color: #000000;
+			}
+
+		/*  ------------- sidebar  ----------------*/
+			
+#sidebar{
+	background: url("recursosIndex/feedback.png") top right no-repeat;
+	position: fixed;
+	width: 90px;
+	height: 300px;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	clip: rect(0px 90px 300px 0px);            /* con clip indicamos el area que queremos que se muestre de nuestra capa sidebar*/
+	float: left;                                /* el problema esta en que cuando necesitamos el recorte, donde esta la imagen que queremos mostrar */
+	z-index:1;                                  /* es donde ira el formulario que solo debe verse con el hover activo, por lo que cuando el hover no esta */
+}                                              /* activo el formulario lo tenemos desplazado 90px a la derecha, y cuando hacemos el hover lo volvemos a */
+                                               /* desplazar 90px a la izquierda para no tapar la imagen del feedback desplazada*/
+											   
+#sidebar:hover{
+	position: fixed;
+	background: #fff url("recursosIndex/feedback.png") top right no-repeat;
+	width: 300px;
+	height: 300px;
+	z-index:2;
+	clip: rect(0px 300px 300px 0px);
+}
+											   
+	#formulario{
+		padding-right: 0px;
+		padding-left: 90px;
+		width: 300px;
+		height: 300px;
+	}
+	
+	#formulario:hover{
+		padding-right: 90px;
+		padding-left: 5px;
+		padding-top: 5px;
+	}
+
+	#formulario input{
+		font-size: 10px;
+		border: 3px solid #70C332;
+		color: #666;
+		background: #eee;
+	}
+	
+	#formulario input:focus{
+		background: rgb(255, 255, 128);
+	}
+	
+	#sidebar input, submit{
+		font-size: large;
+		width: 100px;
+		border: 3px solid #70C332;
+		color: #666;
+		background: #eee;
+	}
+
+	#sidebar textarea{
+		width: 200px;
+		height: 200px;
+		font-size: 10px;
+		border: 3px solid #70C332;
+		color: #666;
+		background: #eee;
+		font-size: 16px;
+	}
+
+	#sidebar textarea:focus{
+		background: rgb(255, 255, 128);
+	}
+
+	/*  ------------- Cuerpo principal  ----------------*/
+	
+#main{
+	border-top-right-radius: 40px;
+	border-top-left-radius: 20px;
+	border-bottom-right-radius: 25px;
+	border-bottom-left-radius: 15px;
+	background: #DDDDDD;
+	color: rgb(0, 128, 64);
+	text-indent: 25px;
+	padding-top: 5px;
+	margin-left: 100px;
+	margin-right: 75px;
+	z-index:1;
+	height: auto;
+}
+	
+	#main h1{
+		text-indent: 50px;
+		margin-left: 5px;
+		color: rgb(0, 74, 37);
+	}
+	
+	#main h3{
+		line-height: 150%;
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+	
+	#main h4{
+		margin-left: 65%;
+		margin-right: 1em;
+	}
+	
+	#main span{
+		font-size: 1.25em;
+	}
+	
+	#main .enlaceSubir{
+		margin-left: 90%;
+	}
+	
+	#main .imgMenu{
+		padding: 20px 0px 25px 300px;
+	}
+     /* -------------- main de paisajes  ---- */
+	
+		/* ------- lista de paisajes ----*/
+		
+			.listaGaleria{
+				padding-left: 10%;
+				list-style-type: none;
+			}
+			
+			.listaGaleria li{
+				width: 260px;
+				height: auto;
+				float: left;
+			}
+			
+			.listaGaleria li a{
+				color: rgb(0, 74, 37);
+				background-color: rgb(116, 173, 173);
+				display: block;
+				padding: 10px 0px 10px 0px;
+				border-bottom-left-radius: 10px;
+				border-bottom-right-radius: 10px;
+				border-top-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+			
+			.listaGaleria li a:hover{
+				color: rgb(0, 0, 0);
+				background-color: rgb(55, 96, 96);
+				text-transform: uppercase;
+				border-left: 10px solid rgb(0, 0, 0);
+			}
+			
+		/* ------- ventana de imagenes ----*/
+		
+			.slide{
+				margin: 0px auto;
+				width: 798;
+				height: 550;
+				border-style: dashed;
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
+			
+			.slide img{
+				width: 750;
+				height: 550;
+				margin: 0px auto;
+			}
+			
+			.slide li{
+				list-style: none;
+				float: left;
+			}
+			
+	/* -------------  Pie de página --------- */
+			
+#footer{
+	padding-top: 20px;
+	text-align: center;
+	line-height: 125%;
+	color: #FFFFFF;
+	clear: both;
+	height: 100px;
+	z-index:1;
+}

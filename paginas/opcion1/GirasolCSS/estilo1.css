@@ -1,0 +1,308 @@
+body {
+    background-image: url(starry-night.jpg);        /* fondo estrellado del body */
+}
+#transicion{
+    position: absolute;             /* El Sol */
+    top: 300px;                     /* inicio del sol */
+    left: 20px;
+    width:200px;                    /* tamaño de inicio */
+    height:200px;
+    background-color:#B05B01;       /* fondo de inicio */ 
+    border-radius:60%;              /* radio que le dara las forma de circunferencia */
+    color:#fff;
+    line-height:200px;
+    font-size:25px;
+    text-align:center;
+    box-shadow:95px 35px 90px #9ECBD6;      /* la sombra clara la utilizaremos para dar el efecto contrario a lo que es la sombra
+                                                * los rayos del sol */
+    animation-duration: 10s;            /* todas las animaciones durarán 10 segundos para que vayan simetricas */
+    animation-name: puestaDeSol;        /* animación del sol */
+    animation-iteration-count: 4;        /* haremos 4 iteraciones para no salir locos */
+    transition-timing-function: linear;
+    
+}
+#tierra {                   /* tierra, los componentes que contiene la tierra tendrán una posición relativa a esta */
+    position: relative;
+    bottom: -525px;  /* posición abajo*/
+    margin-left: 27%;   /* centrada */
+    width:600px;
+    height:200px;
+    background:  radial-gradient(darkgreen 25%, #653203); /* fondo sombreado para dar algo de relieve */
+    border-radius: 100%;            /* redondeamos */
+    animation-name: efectoOscuridad;    /* efecto oscuridad de la noche */
+    animation-duration: 10s;
+    animation-iteration-count: 4
+}
+#tallo {
+    position: absolute;
+    width: 20px;
+    height: 150px;
+    bottom: 200px;
+    left: 50%;
+    background:  linear-gradient(90deg, #966B39, #2E1900);      /*algo de relieve con el gradiente lineal */
+}
+#hojaT {
+    position: absolute;     /* hoja del tallo */
+    border-radius: 5px;     /* recondeamos la punta la hoja */
+    width: 20px;
+    height: 60px;
+    top: 60px;
+    left: 40px;
+    transform: rotate(60deg) skewY(60deg);                  /* la giramos y sesgamos */
+    background:  radial-gradient(#516B02 50%, #004208);     /* fondo con gradiente */
+}
+#corazon {
+     width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 150px;
+    left: -15px;
+    background:  radial-gradient(black 5%, darkgrey);
+    border-radius: 100%
+}
+.hojas {
+    width: 20px;                /* todas las hojas tendran el mismo tamaño */
+    height: 60px;
+    background:  radial-gradient(#516B02 10%, yellow);      /* el mismo fondo con gradiente */
+
+    position: absolute;
+    border-radius: 10px;
+}
+#hoja1 {
+    top: -72px;     /* posicion de cada hoja respecto a la tierra */
+    left: 15px;
+    transform: skewY(-60deg)  rotate(-10deg);       /* indicamos la forma de la hoja aqui aparte de en la animación
+                                                    * para que al finalizar las 4 animaciones la hoja quede con esta forma */
+    animation-duration: 10s;
+    animation-name: aperturaHoja1;
+    animation-iteration-count: 4
+}
+#hoja2 {
+    top: 62px;
+    left: 10px;
+    transform: skewY(-60deg)  rotate(-10deg);
+    animation-duration: 10s;
+    animation-name: aperturaHoja2;
+    animation-iteration-count: 4
+}
+#hoja3 {
+    top: -7px;
+    left: 80px;
+    transform: skewX(-60deg) rotate(105deg);
+    animation-duration: 10s;
+    animation-name: aperturaHoja3;
+    animation-iteration-count: 4
+}
+#hoja4 {
+    top: -7px;
+    left: -50px;
+    transform: skewX(-60deg) rotate(105deg);
+    animation-duration: 10s;
+    animation-name: aperturaHoja4;
+    animation-iteration-count: 4
+}
+#hoja5 {
+    top: -55px;
+    left: 65px;
+    transform: skewX(-60deg) rotate(-45deg);
+    animation-duration: 10s;
+    animation-name: aperturaHoja5;
+    animation-iteration-count: 4
+}
+#hoja6 {
+    top: 40px;
+    left: -40px;
+    transform: skewX(-60deg) rotate(-45deg);
+    animation-duration: 10s;
+    animation-name: aperturaHoja6;
+    animation-iteration-count: 4
+}
+#hoja7 {
+    top: 45px;
+    left: 60px;
+    transform: skewX(40deg) rotate(20deg);
+    animation-duration: 10s;
+    animation-name: aperturaHoja7;
+    animation-iteration-count: 4
+}
+#hoja8 {
+    top: -55px;
+    left: -30px;
+    transform: skewX(40deg) rotate(20deg);
+    animation-duration: 10s;
+    animation-name: aperturaHoja8;
+    animation-iteration-count: 4
+}
+
+@keyframes puestaDeSol {        /* fases del sol */
+    from {
+        margin-left: -10px;         /* hemos indicado todas estos puntos intermedios porque el sol no iba por donde deseaba ni 
+                                    * con el tamaño deseado en la posición en la que estaba */
+        margin-top: 0px;
+    }
+    10% {
+        margin-left: 10px;
+        margin-top: -100px;
+        width:300px;
+        height:300px;
+    }
+    20% {
+        margin-left: 30px;
+        margin-top: -250px;
+        width:400px;
+        height:400px;
+        box-shadow:155px 155px 190px #9ECBD6;       /* jugamos con las sombras para simular los rayos del sol en las distintas etapas del día */
+    }
+    30% {
+        margin-left: 80px;
+        margin-top: -650px;
+        width:600px;
+        height:600px;
+    }
+    40% {
+        margin-left: 150px;
+        margin-top: -850px;
+        width:700px;
+        height:700px;
+    }
+    50% {
+        margin-left: 250px;
+        margin-top: -1100px;
+        box-shadow:0px 350px 350px #EDDE9F;
+        background-color:#FFAF5A;
+        width:900px;
+        height:900px;
+    }
+    60% {
+        margin-left: 500px;
+        margin-top: -800px;
+        width:700px;
+        height:700px;
+    }
+    70% {
+        margin-left: 750px;
+        margin-top: -550px;
+        width:575px;
+        height:575px;
+    }
+    80% {
+        margin-left: 890px;
+        margin-top: -250px;
+        width:400px;
+        height:400px;
+        box-shadow:-155px 155px 190px #EDDE9F;
+    }
+    to {
+        margin-left: 80%;
+        margin-top: 0px;
+        box-shadow:-95px 35px 90px #9ECBD6;
+    }
+}
+
+@keyframes efectoOscuridad {   /* hacemos el efecto de las fases de oscuridad del dia gracias a la opacidad */
+    from {
+        filter: opacity(0.1);
+        -ms-filter: opacity(0.1);  /* para internet explorer */
+    }
+    50% {
+        filter: opacity(1);
+         -ms-filter: opacity(1);  /* para internet explorer */
+    }
+    to {
+        filter: opacity(0.1);
+        -ms-filter: opacity(0.1);  /* para internet explorer */
+    }
+}
+
+        /* ***** Para cada hoja hemos tenido que dar un efecto porque tienen diferente orientación en el eje de coordenadas */
+
+@keyframes aperturaHoja1 {
+    from {
+        transform: skewY(-60deg)  rotate(-10deg) rotateX(-90deg) rotateY(-90deg); /* intentamos que las hojas se vean completamente en la 
+                                                                                    * mitad del día, cuando el sol esta en el punto mas alto */
+    }
+    60% {
+        transform: skewY(-60deg)  rotate(-10deg) rotateX(0deg) rotateY(0deg);   /* ponemos el 60% en lugar de 50% porque las hojas ibn más rápido
+                                                                                * que el sol */
+    }
+    to {
+        transform: skewY(-60deg)  rotate(-10deg) rotateX(-90deg) rotateY(-90deg);
+    }
+}
+@keyframes aperturaHoja2 {
+    from {
+        transform: skewY(-60deg)  rotate(-10deg) rotateX(90deg) rotateY(90deg);
+    }
+    60% {
+        transform: skewY(-60deg)  rotate(-10deg) rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: skewY(-60deg)  rotate(-10deg) rotateX(90deg) rotateY(90deg);
+    }
+}
+@keyframes aperturaHoja3 {
+    from {
+        transform: skewX(-60deg) rotate(105deg) rotateY(-90deg) rotateX(-90deg);
+    }
+    60% {
+        transform: skewX(-60deg) rotate(105deg) rotateY(0deg) rotateX(0deg);
+    }
+    to {
+        transform: skewX(-60deg) rotate(105deg) rotateY(-90deg) rotateX(-90deg);
+    }
+}
+@keyframes aperturaHoja4 {
+    from {
+        transform: skewX(-60deg) rotate(105deg) rotateY(-45deg) rotateX(-45deg);
+    }
+    60% {
+        transform: skewX(-60deg) rotate(105deg) rotateY(0deg) rotateX(0deg);
+    }
+    to {
+        transform: skewX(-60deg) rotate(105deg) rotateY(-45deg) rotateX(-45deg);
+    }
+}
+@keyframes aperturaHoja5 {
+    from {
+        transform: skewX(-60deg) rotate(-45deg) rotateY(90deg) rotateX(45deg);
+    }
+    60% {
+        transform: skewX(-60deg) rotate(-45deg) rotateY(0deg) rotateX(0deg);
+    }
+    to {
+        transform: skewX(-60deg) rotate(-45deg) rotateY(90deg) rotateX(45deg);
+    }
+}
+@keyframes aperturaHoja6 {
+    from {
+        transform: skewX(-60deg) rotate(-45deg) rotateY(90deg) rotateX(-45deg);
+    }
+    60% {
+        transform: skewX(-60deg) rotate(-45deg) rotateY(0deg) rotateX(0deg);
+    }
+    to {
+        transform: skewX(-60deg) rotate(-45deg) rotateY(90deg) rotateX(-45deg);
+    }
+}
+@keyframes aperturaHoja7 {
+    from {
+        transform: skewX(40deg) rotate(20deg) rotateY(45deg) rotateX(90deg);
+    }
+    60% {
+        transform: skewX(40deg) rotate(20deg) rotateY(0deg) rotateX(0deg);
+    }
+    to {
+        transform: skewX(40deg) rotate(20deg) rotateY(45deg) rotateX(90deg);
+    }
+}
+@keyframes aperturaHoja8 {
+    from {
+        transform: skewX(40deg) rotate(20deg) rotateY(45deg) rotateX(90deg);
+    }
+    60% {
+        transform: skewX(40deg) rotate(20deg) rotateY(0deg) rotateX(0deg);
+    }
+    to {
+        transform: skewX(40deg) rotate(20deg) rotateY(45deg) rotateX(90deg);
+    }
+}

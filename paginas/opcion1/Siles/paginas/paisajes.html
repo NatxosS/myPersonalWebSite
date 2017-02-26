@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE html PUBLIC " -// W3C // DTD XHTML 1.0 Strict // EN" http :// www . w3c . org /TR/ xhtml1 / DTD /xhtml1 - strict . dtd ">
+
+<html xmlns =" http :// www.w3.org /1999/ xhtml \"xml: lang ="es" lang ="es">
+	
+	<head>
+		<meta http - equiv =" Content - Type " content =" text / html ; charset =utf -8" />
+		<link rel="stylesheet" type="text/css" href="../estilo.css"></link>
+		<title>Siles - Paisajes</title>
+	</head>
+	
+	<body>
+		<div id="container">         <!-- Capa contenedora -->
+			<div id="header">            <!-- Capa cabecera -->
+				<a href="../index.html" title="Página de inicio"><span>Titulo</span></a>
+			</div>
+			
+			<div id="menu">              <!-- Capa Mennu -->
+				<table>
+					<tr>
+						<td><a href="historia.html" title="">Historia</a></td>
+						<td><a href="geografia.html" title="">Geograf&iacute;a</a></td>
+						<td><a href="gastronomia.html" title="">Gastronom&iacute;a</a></td>
+						<td><a href="paisajes.html" title="">Paisajes</a></td>
+					</tr>
+				</table>
+			</div>
+			
+			<div id="sidebar">           <!--Capa feedback -->
+				<div id="formulario">                          <!-- Capa formulario dentro del sidebar -->
+					<form method="post">
+						<label for="nombre">Nombre: </label><input type="text" name="nombre" id="nombre" maxlength="15" size="10" /><br />
+						<label for="comentarios">Comentarios: </label><br />
+						<textarea name="comentarios" id="comentarios">Escriba su comentario...</textarea>
+						<br />
+						<input type="submit" value="Enviar"> <input type="reset" value="Borrar">
+					</form>
+				</div>
+			</div>
+			
+			<div id="main">              <!-- Capa Principal -->
+				<div class="listaGaleria">
+					<li><a href="#img1">Subiendo a Navalespino</a></li>
+					<li><a href="#img2">Calar de Navalespino 1</a></li>
+					<li><a href="#img3">Calar de Navalespino 2</a></li>
+					<li><a href="#img4">Calarejos</a></li>
+					<li><a href="#img5">Siles desde el Puntal</a></li>
+					<li><a href="#img6">Presa de Siles</a></li>
+					<li><a href="#img7">Chuletada</a></li>
+				</div>
+				<div class="slide">
+					<li id="img1"><img src="recursosPaisajes/navalspino3.jpg" /></li>
+					<li id="img2"><img src="recursosPaisajes/navalspino2.jpg" /></li>
+					<li id="img3"><img src="recursosPaisajes/navalspino1.jpg" /></li>
+					<li id="img4"><img src="recursosPaisajes/calarejos.jpg" /></li>
+					<li id="img5"><img src="recursosPaisajes/DesdeElPuntal.jpg" /></li>
+					<li id="img6"><img src="recursosPaisajes/PresaSiles.jpg" /></li>
+					<li id="img7"><img src="recursosPaisajes/chuletada.jpg" /></li>
+				</div>
+				<br />
+				<a href="#main" class="enlaceSubir"><img src="../recursosIndex/subir.jpg" alt="subir" /></a>
+			</div>
+			
+			<div id="footer">            <!-- Capa pie de página -->
+				<img src="../recursosIndex/valid-xhtml10.png" value="Validator XHTML"/>
+				<p>Created by NatxosS</p>
+			</div>
+		</div>
+	</body>
+</html>

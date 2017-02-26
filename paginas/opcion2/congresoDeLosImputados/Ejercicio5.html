@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Congreso de los imputados</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="estilo5.css" type="text/css" /> <!-- enlacamos con el css que nos mostrara el plano del congreso -->
+       
+    </head>
+    <body onload="mostrarInfo()">
+        <h1>CONGRESO DE LOS IMPUTADOS <span style="color:red">INCOMPLETO</span></h1>
+        <div id="infoParlamento">
+            <h2>Estadísticas:</h2>
+            <div class="contenido" id="porPartido">
+                <h3>Partidos y sus miembros:</h3>
+                <p id="contenidoPorPartido"></p>
+            </div>
+            <div class="contenido" id="porIdeología">
+                <h3>Miembros por ideologías:</h3>
+                <p id="contenidoPorIdeologia"></p>
+            </div>
+        </div>
+        <h2 id="RomperFloat">Formularios (en rojo los campos errorneos):</h2>
+        <div id="formularios">
+            <div id="nuevoPartido">
+                <label id="lnombreP" name="lnombreP" for="nombreP">Nombre del nuevo partido político: </label>
+                <input type="text" name="nombreP" id="nombreP" /><br />
+                <label id="lideario" name="lideario" for="ideario">Ideario del partido (izquierda, derecha, centro, vendidos): </label><br />
+                <input type="text" name="ideario" id="ideario" /><br /><br />
+                <button onclick="crearPartido()" name="crear" id="crear">Crear partido</button>
+                <p id="errorPartido"></p>
+            </div>
+            <div id="nuevoPolitico">
+                <label id="lnombre" name="lnombre" for="nombre">Nombre: </label>
+                <input type="text" name="nombre" id="nombre" /><br />
+                <label id="lapellidos" name="lapellidos" for="apellidos">Apellidos: </label>
+                <input type="text" name="apellidos" id="apellidos" /><br />
+                <label id="ldni" name="ldni" for="dni">DNI: </label>
+                <input type="text" name="dni" id="dni" /><br />
+                <label id="lpartido" name="lpartido" for="partido">Partido al que pertenece: </label>
+                <input type="text" name="partido" id="partido" /><br />
+                <label id="lprovincia" name="lprovincia" for="provincia">Provincia: </label>
+                <input type="text" name="provincia" id="provincia" /><br />
+                <label id="lideologia" name="lideologia" for="ideologia">Ideología (izquierda, derecha, centro, vendidos): </label><br />
+                <input type="text" name="ideologia" id="ideologia" /><br /><p id="errorPolitico"></p>
+                <button onclick="crearPolitico()" name="crearP" id="crearP">Crear político</button>
+            </div>
+            <div id="nuevaPreposicion">
+                <label id="ltexto" name="ltexto" for="texto">Texto de la preposición de ley: </label><br />
+                <textarea rows="6" cols="60" name="texto" id="texto">Escriba aquí el contenido de la ley</textarea><br />
+                <label id="lpartido2" name="lpartido2" for="partido2">Partido al que pertenece: </label>
+                <input type="text" name="partido2" id="partido2" /><br /><p id="errorLey"></p>
+                <button onclick="crearLey()" name="crearL" id="crearL">Crear ley</button>
+            </div>
+        </div>
+        <h2>Votaciones:</h2>
+        <div id="leyes" name="leyes">
+        </div>
+        <div id="mapaParlamento">
+            
+        </div>
+        <script>
+            
+     /* ****************************  OBJETO LEY ************************************** */
+            
+            class Ley {
+                
+                /* -------------------  CONSTRUCTOR ------------------- */
+                
+                constructor(cadenaLey_in, partido_in) {
+                    this.cadenaLey = cadenaLey_in;
+                    this.partido = partido_in;
+                    this.aprovada = false;              // inicializamos la ley sin aprovar 
+                }
+                
+                /* ----------------  GETTERS ---------------------- */
+                
+                getCadenaLey() {
+                    return this.cadenaLey;
+                }
+                getPartido() {
+                    return this.partido;
+                }
+                getAprovada() {
+                    return this.aprovada;
+                }
+                
+                /* ----------------  SETTERS ---------------------- */
+                
+                setCadenaLey(cadenaLey_in) {
+                    this.cadenaLey = cadenaLey_in;
+                }
+                
+                setPartido(partido_in) {
+                    this.partido = partido_in;
+                }
+                
+                setAprovada(aprovada_in) {
+                    this.aprovada = aprovada_in;
+                }
+                
+                /* -------------------  MÉTODOS ------------------- */
+                
+                
+            }
+            var engordar = new Ley("obligacion de engordar o adelgazar hasta los 100 kg", pp);
+            var cagar = new Ley("Obligación de cagar solo una vez al día", psoe);
+            var arrayPreposicionesLey = [engordar, cagar];       // array que contendra a las leyes
+            
+     /* ****************************  OBJETO PARTIDO ************************************** */
+            
+            class Partido {
+                constructor(nombre_in, ideario_in) {
+                    this.nombre = nombre_in;
+                    this.ideario = ideario_in;
+                }
+                
+                /* ----------------  GETTERS ---------------------- */
+                
+                getNombre() {
+                    return this.nombre;
+                }
+                getIdeario() {
+                    return this.ideario;
+                }
+                
+                /* ----------------  SETTERS ---------------------- */
+                
+                setNombre(nombre_in) {
+                    this.nombre = nombre_in;
+                }
+                
+                setIdeario(ideario_in) {
+                    this.ideario = ideario_in;
+                }
+                
+                /* -------------------  MÉTODOS ------------------- */
+                
+                
+            }
+            
+            // creamos algún partido
+            
+            
+                                // (nombre_in, ideario_in)
+            var pp = new Partido("PutoPais", "derechas");
+            
+            var psoe = new Partido("Solistos", "vendidos");
+            
+            var podemos = new Partido("Poblemos", "izquierda");
+            
+            var ciudadanos = new Partido("Ciudagramos", "centro");
+            
+            var arrayPartidos = [pp, psoe, podemos, ciudadanos];
+            
+        /* ****************************  OBJETO POLITICO ************************************** */
+            
+            class Politico {
+                constructor(nombre_in, apellidos_in, dni_in, partido_in, provincia_in, ideologia_in) {
+                    this.nombre = nombre_in;
+                    this.apellidos = apellidos_in;
+                    this.dni = dni_in;
+                    this.partido = partido_in;
+                    this.provincia = provincia_in;
+                    this.ideologia = ideologia_in;
+                }
+                
+                /* ----------------  GETTERS ---------------------- */
+                
+                getNombre() {
+                    return this.nombre;
+                }
+                
+                getApellidos() {
+                    return this.apellidos;
+                }
+                
+                getDni() {
+                    return this.dni;
+                }
+                
+                getPartido() {
+                    return this.partido;
+                }
+                
+                getProvincia() {
+                    return this.provincia;
+                }
+                
+                getIdeologia() {
+                    return this.ideologia;
+                }
+                
+                /* ----------------  SETTERS ---------------------- */
+                
+                setApellidos(nombre_in) {
+                    this.nombre = nombre_in;
+                }
+                
+                setApellidos(apellidos_in) {
+                    this.apellidos = apellidos_in;
+                }
+                
+                setDni(dni_in) {
+                    this.dni = dni_in;
+                }
+                
+                setPartido(partido_in) {
+                    this.partido = partido_in;
+                }
+                
+                setProvincia(provincia_in) {
+                    this.provincia = provincia_in;
+                }
+                
+                setIdeologia(ideologia_in) {
+                    this.ideologia = ideologia_in;
+                }
+                
+                /* -------------------  MÉTODOS ------------------- */
+                
+                votar(leyAVotar) {  // metodo votar del político
+                    var voto;
+                    var deSuPartido = false;
+                    
+                    if (leyAVotar.getPartido() == this.getPartido()) {   // si la ley es de su partido o no
+                        deSuPartido = true;
+                    }
+                    
+                    var num = Math.random()*(100-1)+1;  /* hallamos un número entre 1 y 100, ambos incluidos, y nos quedamos 
+                                                                    *    con el primer decimal */
+                    num = num.toFixed(1);
+                    
+                    
+                    if (deSuPartido) {      // si la ley es de su partido hacemos lo que viene en el enunciado
+                        if (num <= 98) {
+                            voto = "si";        // si el número es menor o igual que 98 es un si (98%)
+                        } else {
+                            if (num <= 98.5) {  // si el número esta entre 98 y 98.5 sera No el voto (0'5%)
+                                voto = "no";
+                            } else {
+                                voto = "abstenido";     // si el número es mayor que 98'5 y menor o igual que 100 (1'5%) el politico se abstendrá
+                            }
+                        }
+                    } else {        // si la ley no es de su partido haremos lo contrario (98% un no, 0.5% un si, 1.5% se abstendrá)
+                        if (num <= 98) {
+                            voto = "no";        // si el número es menor o igual que 98 es un no (98%)
+                        } else {
+                            if (num <= 98.5) {  // si el número esta entre 98 y 98.5 sera Si el voto (0'5%)
+                                voto = "si";
+                            } else {
+                                voto = "abstenido";     // si el número es mayor que 98'5 y menor o igual que 100 (1'5%)
+                            }
+                        }
+                    }
+                    
+                    return voto;
+                }
+                
+            }
+            
+            var arrayPoliticos = new Array();   // array que contendra a los politicos
+            
+            // creamos politicos
+                                      //  (nombre_in, apellidos_in, dni_in, partido_in, provincia_in, ideologia_in)
+            var politico1 = new Politico('Marianico', 'el corto', '12345678X', pp, 'Mandrid', 'derecha');
+            
+            var politico2 = new Politico("Sultana", "Diaz", "98765432X", psoe, "Sevilla", "vendidos");
+            
+            var politico3 = new Politico("Pedro", "sanchez", "12365478X", psoe, "Burgos", "vendidos");
+            
+            var politico4 = new Politico("Pablo", "Satán", "98345678X", podemos, "Vallecas", "Izquierda");
+            
+            var politico5 = new Politico("Albert", "cocqueras", "12345999X", ciudadanos, "Catalonia", "centro");
+            
+            var arrayPoliticos = [politico1, politico2, politico4, politico3, politico5];   // array que contiene a los politicos
+            
+     /* ****************************  OBJETO PARLAMENTO ************************************** */
+            
+            class Parlamento {
+                
+                /* -------------------  CONSTRUCTOR ------------------- */
+                
+                constructor(politicos_in, preposicionesDeLey_in, partidos_in) {
+                    this.politicos = politicos_in;
+                    this.preposicionesDeLey = preposicionesDeLey_in;
+                    this.partidos = partidos_in;
+                }
+                
+                /* ----------------  GETTERS ---------------------- */
+                
+                getPoliticos() {
+                    return this.politicos;
+                }
+                
+                getPreposicionesDeLey() {
+                    return this.preposicionesDeLey;
+                }
+                
+                getPartidos() {
+                    return this.partidos;
+                }
+                
+                /* ----------------  SETTERS ---------------------- */
+                
+                setPoliticos(politicos_in) {
+                    this.politicos = politicos_in;
+                }
+                
+                setPreposicionesDeLey(preposicionesDeLey_in) {
+                    this.preposicionesDeLey = preposicionesDeLey_in;
+                }
+                
+                setPartidos(partidos_in) {
+                    this.partidos = partidos_in;
+                }
+                
+                /* -------------------  MÉTODOS ------------------- */               
+                
+                crearPartido() {        // método que nos crea un partido
+                    
+                    document.getElementById("lnombreP").style.color = "black";
+                    document.getElementById("lideario").style.color = "black";           
+                    
+                    var nombrePartido = document.getElementById("nombreP").value;      // recogemos las variables del formulario
+                    var ideario = document.getElementById("ideario").value;
+                    
+                    if (nombrePartido == "" || nombrePartido == null || !comprobarIdeologia(ideario)) {
+                        if (nombrePartido == "" || nombrePartido == null) {
+                            document.getElementById("lnombreP").style.color = "red";
+                        }
+                        if (ideario == "" || ideario == null || !comprobarIdeologia(ideario)) {
+                            document.getElementById("lideario").style.color = "red";
+                        }
+                    } else {
+                        var nuevoPartido = new Partido(nombrePartido, ideario);
+                    }
+                    
+                    return nuevoPartido;
+                }
+                
+                crearPolitico() {       // método que nos crea un politico
+                    
+                    document.getElementById("lnombre").style.color = "black";
+                    document.getElementById("lapellidos").style.color = "black";
+                    document.getElementById("ldni").style.color = "black";
+                    document.getElementById("lpartido").style.color = "black";
+                    document.getElementById("lprovincia").style.color = "black";
+                    document.getElementById("lideologia").style.color = "black";
+                    
+                    var nombre = document.getElementById("nombre").value;      // recogemos las variables del formulario
+                    var apellidos = document.getElementById("apellidos").value;
+                    var dni = document.getElementById("dni").value;
+                    var nombrePartido = document.getElementById("partido").value;
+                    var provincia = document.getElementById("provincia").value;
+                    var ideologia = document.getElementById("ideologia").value;
+                    
+                    console.log(ideologia);
+                    
+                    if (nombrePartido == "" || nombrePartido == null || !comprobarIdeologia(ideologia) || nombre == null || apellidos == null || dni == null || provincia == null || !comprobarPartido(nombrePartido)) {
+                        if (nombre == "" || nombre == null) {
+                            document.getElementById("lnombre").style.color = "red";
+                        }
+                        if (apellidos == "" || apellidos == null) {
+                            document.getElementById("lapellidos").style.color = "red";
+                        }
+                        if (dni == "" || dni == null) {
+                            document.getElementById("ldni").style.color = "red";
+                        }
+                        
+                        if (nombrePartido == "" || nombrePartido == null || !comprobarPartido(nombrePartido)) {
+                            document.getElementById("lpartido").style.color = "red";
+                        }
+                        if (provincia == "" || provincia == null) {
+                            document.getElementById("lprovincia").style.color = "red";
+                        }
+                        if (ideologia == "" || ideologia == null || !comprobarIdeologia(ideologia)) {
+                            document.getElementById("lideologia").style.color = "red";
+                        }
+                        return null;
+                    } else {
+                        var nuevoPolitico = new Partido(nombre, apellidos, dni, nombrePartido, provincia, ideologia);
+                        return nuevoPolitico;
+                    }
+                }
+                
+                crearLey() {        // método que nos crea una preposición de ley
+                    
+                    document.getElementById("ltexto").style.color = "black";
+                    document.getElementById("lpartido2").style.color = "black";
+                    
+                    var texto = document.getElementById("texto").value;      // recogemos las variables del formulario
+                    var partidoLey = document.getElementById("partido2").value;
+                    
+                    if (texto == "Escriba aquí el contenido de la ley" || texto == null || partidoLey == "" || partidoLey == null || !comprobarPartido(partidoLey)) {
+                        if (texto == "Escriba aquí el contenido de la ley" || texto == null) {
+                            document.getElementById("ltexto").style.color = "red";
+                        }
+                        if (partidoLey == "" || partidoLey == null || !comprobarPartido(partidoLey)) {
+                            document.getElementById("lpartido2").style.color = "red";
+                        }
+                        return null;
+                    } else {
+                        var nuevaLey = new Ley(texto, partidoLey);
+                        return nuevaLey;
+                    }
+                }
+            }
+            
+            /* ---- CREAMOS EL CONGRESO DE LOS IMPUTADOS ---- */
+            
+            // creamos el Parlamento
+            
+            var parlamentoEspanol = new Parlamento(arrayPoliticos, arrayPreposicionesLey, arrayPartidos);
+            
+            // --------------  ****  FUNCIONES EXTRA **** -------------
+            
+           function mostrarPorIdeologia() {
+                    
+                    var totalIzq = 0;
+                    var totalDrch = 0;
+                    var totalCntr = 0;
+                    var totalVend = 0;
+
+                    var cadenaResultante = "";
+                    
+                    for (var i=0; i<arrayPoliticos.length; i++) {
+                        var ideologia = arrayPoliticos[i].getIdeologia();
+                        ideologia = ideologia.toLowerCase();
+                        
+                        if ("izquierda" == ideologia) {
+                            totalIzq++;
+                        } else {
+                            if ("derecha" == ideologia) {
+                                totalDrch++;
+                            } else {
+                                if ("centro" == ideologia) {
+                                    totalCntr++;
+                                } else {
+                                    totalVend++;
+                                }
+                            }
+                        }
+                    }
+                    
+                    cadenaResultante += "De izquierdas tenemos "+ totalIzq +" politicos en el congreso.<br />";
+                    cadenaResultante += "De derechas tenemos "+ totalDrch +" politicos en el congreso.<br />";
+                    cadenaResultante += "De centro tenemos "+ totalCntr +" politicos en el congreso.<br />";
+                    cadenaResultante += "Vendidos tenemos "+ totalVend +" politicos en el congreso.<br />";
+                    
+                    return cadenaResultante;
+                }
+            function mostrarPorPartido() {
+                        
+                var cadenaResultante = "";
+                var total = 0;
+
+                for (var i=0; i<arrayPartidos.length; i++) {
+                    for (var j=0; j<arrayPoliticos.length; j++) {
+                        if (arrayPartidos[i] == arrayPoliticos[j].getPartido()) {
+                            total++;
+                        }
+                    }
+                    cadenaResultante += "Del partido "+arrayPartidos[i].getNombre() +" tenemos "+ total +" politicos<br />"; 
+                    total = 0;
+                }
+
+                return cadenaResultante;
+            }
+            
+            function mostrarLeyes() {
+                
+                var cadenaResultante = "";
+                
+                for (var i=0; i<arrayPreposicionesLey.length; i++) {
+                    cadenaResultante += "<p>"+arrayPreposicionesLey[i].getCadenaLey()+" <button onClick=\"votarLeyes("+ arrayPreposicionesLey[i] +")\">Votar ley</button></p>";
+                }
+                
+                return cadenaResultante;
+            }
+            
+            function comprobarPartido(partido_in) {     /* función que comprueba si el partido introducido en alguno de los dos 
+                                                        * formularios en el que se pide existe en el array de partidos */
+                var correcto = false;
+                var i = 0;
+                
+                while (i < arrayPartidos.length && correcto == false) {     /* mientras no terminemos de recorrer el array y no encontremos el                                                                 partido continuamos haciendo el bucle */
+                    if (partido_in == arrayPartidos[i].getNombre()) {
+                        correcto = true;
+                    }
+                    i++;
+                }
+                
+                return correcto;
+            }
+            function comprobarIdeologia(ideologia_in) {     /* función que comprueba si la ideología introducida en alguno de los dos 
+                                                        * formularios es correcto */
+               ideologia_in = ideologia_in.toLowerCase();
+                
+                if (ideologia_in == "izquierda" || ideologia_in == "derecha" || ideologia_in == "centro" || ideologia_in == "vendidos") {     
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            
+            
+            function mostrarInfo() {
+                document.getElementById("contenidoPorIdeologia").innerHTML = mostrarPorIdeologia();  
+                    
+                document.getElementById("contenidoPorPartido").innerHTML = mostrarPorPartido();
+                
+                console.log(mostrarLeyes());
+                document.getElementById("leyes").innerHTML = mostrarLeyes();
+            }
+            
+            function crearPartido() {
+                
+                if (parlamentoEspanol.crearPartido() != null) {
+                    arrayPartidos.push(parlamentoEspanol.crearPartido());
+                }
+                mostrarInfo();
+            }
+            
+            function crearPolitico() {
+                
+                if (parlamentoEspanol.crearPolitico() != null) {
+                    arrayPoliticos.push(parlamentoEspanol.crearPolitico());
+                }
+                mostrarInfo();
+            }
+            function crearLey() {
+                
+                if (parlamentoEspanol.crearLey() != null) {
+                    arrayPreposicionesLey.push(parlamentoEspanol.crearLey());
+                }
+                mostrarInfo();
+                
+            }
+
+            function votarLeyes(ley_in) {
+                
+                var cadenaLuces = "";
+                var aFavor = 0;
+                var enContra = 0;
+                var abstencion = 0;
+                
+                for (var i=0; i<arrayPoliticos.length; i++) {
+                    var voto = arrayPoliticos[i].votar(ley_in);
+                    if (voto == "si") {
+                        cadenaLuces += "<div class=\"politico\" id=\"verde\" ></div>";
+                        ley_in.setAprovada(true);
+                    } else {
+                        if (voto == "no") {
+                            cadenaLuces += "<div class=\"politico\" id=\"rojo\" ></div>";
+                        } else {
+                            cadenaLuces += "<div class=\"politico\" id=\"negro\" ></div>";
+                        }
+                    }
+                }
+                cadenaLuces += "<p>Presentes: "+ arrayPoliticos.length +" Emitidos: "+ arrayPoliticos.length +"<br />Si: "+ aFavor +" No: "+ enContra +" Abst: "+ abstencion +"</p>"
+                console.log(cadenaLuces);
+                document.getElementById("mapaParlamento").innerHTML = cadenaLuces;
+            }
+        </script>
+    </body>
+</html>

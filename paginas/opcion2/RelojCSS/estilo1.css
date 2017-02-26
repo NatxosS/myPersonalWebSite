@@ -1,0 +1,129 @@
+            /* ----------  IMPORTACIONES DE FUENTE ----------- */
+
+@font-face {
+    font-family: "bungee";
+    src: url('recursos/Bungee/Bungee-Regular.ttf');
+}
+
+/* CSS estatico */
+
+#reloj {                    /* la caja del reloj, posición relativa para que los demas componentes del reloj tomen posiciones 
+                            respecto a este div */
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border-radius: 60%;         /* lo redondeamos */
+    border: 15px groove gold;       /* borde dorado con efecto groove para dar relieve */
+    margin:auto;                    /* centramos */
+    background: radial-gradient(brown 25%, #653203);    /* fondo con gradiente radial */
+    box-shadow: 10px 10px 1px orange    /* le ponemos sombra al reloj  */
+}
+#centro {
+    position: absolute;
+    width: 50px;            /* eje de las agujas del reloj */
+    height: 50px;
+    border-radius: 60%;     /* redondeamos */
+    background: radial-gradient(grey 25%, #653203);     /* fondo con gradiente radial */
+    left: 275px;    /* lo posicionamos en el centro del reloj */
+    top:275px;
+    box-shadow: 3px 3px 1px #653203;
+}
+#segundero {
+    position: absolute;
+    width: 300px;
+    height: 15px;
+    margin: auto;
+    top: 290px;
+    left: 255px;
+    background: linear-gradient(0deg, grey, #653203);  /* gradiente lineal a la aguja para dar sensación de relieve */
+    border-radius: 10px;
+    z-index: 5;
+    animation-name: segundos;       /* animación del segundero */
+    animation-duration: 60s;            /* tiempo en hacer la animación (dar la vuelta, un minuto son 60 segundos) */
+    animation-iteration-count: infinite;    /* que lo haga infinitas veces */
+    animation-timing-function: steps(60, end);     /* la animación se divida en 60 pasos */
+    transform-origin: 15%;                  /* con esto desplazamos el eje de rotación de la aguja al 15% de su longuitud
+                                            *  para que nos asome por el otro lado del eje de las agujas */ 
+}
+#minutero {
+    position: absolute;
+    width: 200px;
+    height: 15px;
+    margin: auto;
+    top: 290px;
+    left: 260px;
+    background: linear-gradient(0deg, blue, black);
+    border-radius: 10px;
+    z-index: 6;                 /* el minutero estara por encima del resto */
+    animation-name: minutos;
+    animation-duration: 3600s;                      /* la animación dura 3600 segundos (1 hora) */
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(3600, end);     /* la animación se divida en 3600 pasos */
+    transform-origin: 20%;          /*desplazamos el eje de rotación al 20% de su longitud */
+}
+
+@keyframes segundos {
+    from {
+        transform: rotate(0deg);            /* la animación es que nos rote 360 grados */
+        box-shadow: 10px 10px 10px black;   /* hacemos que la sombra se mueva teniendo en cuenta que la fuente de luz estará fija arriba a la                                           izquierda */
+    }
+    25% {
+        box-shadow: 10px 0px 10px black;
+    }
+    50% {
+        box-shadow: -10px -10px 10px black;
+    }
+    
+    75% {
+        box-shadow: -10px 0px 10px black;
+    }
+
+    to {
+        transform: rotate(360deg);
+        box-shadow: -10px 10px 10px black;
+    }
+}
+@keyframes minutos {            /* animación de la aguja de minutos */
+    from {
+        transform: rotate(0deg);
+        box-shadow: 10px 10px 10px black;
+    }
+    25% {
+        box-shadow: 10px 0px 10px black;
+    }
+    50% {
+        box-shadow: -10px -10px 10px black;
+    }
+    
+    75% {
+        box-shadow: -10px 0px 10px black;
+    }
+
+    to {
+        transform: rotate(360deg);
+        box-shadow: -10px 10px 10px black;
+    }
+}
+
+.numero {
+    font-family: bungee;            /* el formato del texto de los números importados */
+    position: absolute;
+    font-size: 1.75em;
+    text-shadow: gold 2px 2px 1px;  /* sombra a los números */
+}
+#doce {             /* posicionamos los distintos números respecto al reloj */
+    top: -70px;
+    left:265px
+}
+#nueve {
+    top: 190px;
+    left: 15px
+}
+#seis {
+    left: 275px;
+    top: 450px
+}
+#tres {
+    top: 190px;
+    left: 550px
+}
