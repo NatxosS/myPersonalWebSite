@@ -1,101 +1,199 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Ignacio López Ballesteros</title>
-  <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="css/estilo.css" />
+    <head>
+        <meta charset="UTF-8">
+        <title>Ignacio López Ballesteros</title>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="css/estilo.css" />
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body>
-	<header>
-		<nav>
-			<div class="nav-wrapper teal darken-2">
-				<a href="#" class="brand-logo center">Programador Web</a>
-			</div>
-		</nav>
-	</header>
-  	<nav id="footer">
-    	<div class="nav-wrapper teal darken-2">
-      
-	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-	      <ul class="center hide-on-med-and-down">
-	        <li><a href=""><i class="material-icons left">feedback</i>Contacto</a></li>
-	      </ul>
-	      <ul class="side-nav" id="mobile-demo">
-	        <li><a href=""><i class="material-icons left">devices_other</i>Contacto</a></li>
-	      </ul>
-	    </div>
-  	</nav>
- 	<div class="container">
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    
+    <!-- ************************* HEADER  ****************************   -->
+    
+    <body>
+        <header>
+            <nav>
+                <div class="nav-wrapper teal darken-2">
+                    <a href="#" class="brand-logo center">Programador Web</a>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- **************** SECCION DE PRESENTACIÓN  *****************   -->
+
         <div class="row" id="presentacion">
-            <div class="col s3 m3">
+            <div class="col s3 offset-s1 m3 offset-m1">
                 <img src="images/yo.jpg.jpg" alt="" class="circle responsive-img">
             </div>
-            <div class="col s9 m6">
-            <h3 class="header">Ignacio López Ballesteros</h3>
-            <div class="card small horizontal">
-              <div class="card-image">
-                
-              </div>
-              <div class="card-stacked">
-                <div class="card-content">
-                  <p>Esta página esta pensada para mostrar mis trabajos más importantes y servir o servirme de guía con algunos de los manuales que hice durante los dos cursos del ciclo de grado superior de Desarrollo de Aplicaciones Web realizado de forma presencial en el I.E.S Aguadulce de Aguadulce (Roquetas de Mar - Almería)</p>
-                  
+            <div class="col s8 offset-s1 m6">
+                <h3 class="header">Ignacio López Ballesteros</h3>
+                <div class="card small horizontal">
+                    <div class="card-image">
+
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <p>Esta página esta pensada para mostrar mis trabajos más importantes y servir o servirme de guía con algunos de los manuales que hice durante los dos cursos del ciclo de grado superior de Desarrollo de Aplicaciones Web realizado de forma presencial en el I.E.S Aguadulce de Aguadulce (Roquetas de Mar - Almería)</p> 
+                        </div>
+                        <div class="card-action">
+                            <a href="http://www.iesaguadulce.es/centro/">I.E.S Aguadulce</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-action">
-                  <a href="http://www.iesaguadulce.es/centro/">I.E.S Aguadulce</a>
-                </div>
-              </div>
             </div>
-          </div>
         </div>  
         
-  		<div id="opcion" class="row">
-	      <div id="opcion1" class="col s12 m3 center">
-	        <a href="" class=" z-depth-4"><i class="material-icons">web</i><br /> HTML + CSS</a>
-		    <ul class="menuOculto white-text">
-		    	<li><a href="Paginas/opcion1/VelocidadCss/ejercicio3_3.html">Velocidades CSS</a></li>
-		    	<li><a href="Paginas/opcion1/GirasolCSS/girasol.html">Girasol CSS</a></li>
-		    	<li><a href="Paginas/opcion1/Clinica/clinica.html">Clínica Bootstrap Responsiva</a></li>
-		    	<li><a href="Paginas/opcion1/Siles/index.html">Siles HTML+CSS Básicos</a></li>
-		    </ul>
-	      </div>
-	      <div id="opcion2" class="col s12 m3 center">
-	        <a href="" class=" z-depth-4"><i class="material-icons">developer_mode</i><br />Desarrollo Cliente</a>
-              <ul class="menuOculto">
-		    	<li><a href="Paginas/opcion2/congresoDeLosImputados/Ejercicio5.html">Congreso de los imputados con JavaScript</a></li>
-                <li><a href="Paginas/opcion2/RelojCSS/ejercicio1.html">Reloj CSS + JavaScript</a></li>
-		    </ul>
-	      </div>
-	      <div id="opcion3" class="col s12 m3 center">
-	        <a href="" class=" z-depth-4"><i class="material-icons">storage</i><br />Desarrollo Servidor</a>
-              <ul class="menuOculto">
-		    	<li><a href="">Banco PHP - sin BD</a></li>
-		    </ul>
-	      </div>
-			<div id="opcion4" class="col s12 m3 center">
-	        	<a href="" class=" z-depth-4"><i class="material-icons">description</i><br />Otros/Manuales</a>
-                <ul class="menuOculto">
-		    	<li><a href="https://youtu.be/e5mUw2Mi8oI">Enlace a TPV Java</a></li>
-		    	<li><a href="Paginas/opcion4/Manuales/">Manuales</a></li>
-		    </ul>
-	      </div>
-    </div>
-  </div>
+        <!-- **************** SECCION DE MUESTRA DE MIS TRABAJOS  *****************   -->
         
-	 <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
-      <script>
-      	$( document ).ready(function() {
-      		$(".button-collapse").sideNav();
-      	});
-      </script>
+        <div class="container">
+            <div id="opcion" class="row">
+                <div id="opcion1" class="col s12 m3 center">
+                    <a href="" class=" z-depth-4"><i class="material-icons">web</i><br /> HTML + CSS</a>
+                    <ul class="menuOculto white-text">
+                        <li><a href="paginas/opcion1/VelocidadCss/ejercicio3_3.html" title="">Velocidades CSS</a></li>
+                        <li><a href="paginas/opcion1/GirasolCSS/girasol.html" title="">Girasol CSS</a></li>
+                        <li><a href="paginas/opcion1/Clinica/clinica.html" title="Web realizada poco a poco con HTML y CSS en Diseño de interfaces y finalizada con retoques de Boostrap para ser responsiva">Clínica Bootstrap Responsiva</a></li>
+                        <li><a href="paginas/opcion1/Siles/index.html" title="Web realizada en 1º DAW con HTML+CSS Básicos">Siles</a></li>
+                    </ul>
+                </div>
+                <div id="opcion2" class="col s12 m3 center">
+                    <a href="" class=" z-depth-4"><i class="material-icons">developer_mode</i><br />Desarrollo Cliente</a>
+                    <ul class="menuOculto">
+                        <li><a href="paginas/opcion2/congresoDeLosImputados/Ejercicio5.html" title="">Congreso de los imputados con JavaScript</a></li>
+                        <li><a href="paginas/opcion2/RelojCSS/ejercicio1.html">Reloj CSS + JavaScript</a></li>
+                    </ul>
+                </div>
+                <div id="opcion3" class="col s12 m3 center">
+                    <a href="" class=" z-depth-4"><i class="material-icons">storage</i><br />Desarrollo Servidor</a>
+                    <ul class="menuOculto">
+                        <li><a href="" title="Banco realizado con conocimientos básicos de PHP, sin acceso a base de datos, ni sesiones, ni cookies">Banco PHP - sin BD</a></li>
+                    </ul>
+                </div>
+                <div id="opcion4" class="col s12 m3 center">
+                    <a href="" class=" z-depth-4"><i class="material-icons">description</i><br />Otros/Manuales</a>
+                    <ul class="menuOculto">
+                        <li><a href="https://youtu.be/e5mUw2Mi8oI" title="Proyecto final del curso realizado a distancia con www.campusseas.com">Enlace a TPV Java</a></li>
+                        <li><a href="paginas/opcion4/Manuales/" title="Varios">Manuales</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- **************** SECCION DE CONEXIÓN A API DE RED SOCIAL  *****************   
+            https://geekytheory.com/como-usar-la-api-de-twitter-en-php -->
+            
+           <div class="divider"></div> 
+            <div class="row" id="redSocial">
+                <h5>Mis últimos Tweet's</h5>
+                
+                <div class="col s12 m4 center" id="tweetUno">
+                    <?php
+                    /*require_once 'include/showTweets.php';
+                    
+                    $mostrarT = new Twitter();
+                    $mostrarT->getTweets();*/
+                    ?>
+                    <!-- <div class="preloader-wrapper active">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="col s12 m3 center" id="tweetDos">
+                    <div class="preloader-wrapper active">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m3 center" id="tweetTres">
+                    <!-- <div class="preloader-wrapper active">
+                        <div class="spinner-layer spinner-red-only">
+                            <div class="circle-clipper left">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="gap-patch">
+                                <div class="circle"></div>
+                            </div>
+                            <div class="circle-clipper right">
+                                <div class="circle"></div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            
+            <!-- **************** SECCION DE CONTACTO  *****************   -->
+            
+            <div class="divider"></div>
+            <div class="row" id="contacto" name="contacto">           <!-- Sección de contacto -->
+                <h5>Contacto</h5>
+                <form class="col s12" method="post" action="enviar();" id="form">
+                    <div class="row">
+                        <div class="input-field col m6 s10">
+                            <input id="nombre" type="text" name="nombre" class="validate">
+                            <label for="nombre">Nombre: </label>
+                        </div>
+                        <div class="input-field col m6 s10">
+                            <input id="email" name="email" type="email" class="validate">
+                            <label for="email" data-error="Email erroneo o inexistente" data-success="correcto">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea id="texto" name="texto" class="materialize-textarea"></textarea>
+                            <label for="texto">Introduzca su petición, sugerencia...</label>
+                        </div>
+                    </div>
+                    <div class="row" id="ultimaFila">
+                        <div class="input-field col s6">
+                            <input type="checkbox" class="filled-in" id="acepta" />
+                            <label for="acepta">Acepta que se almacenen sus datos</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input type="submit" class="btn-large" id="enviar" value="Enviar" disabled="true" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <footer class="page-footer teal darken-2 valign-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                       <p class="white-text"><a class="grey-text text-lighten-4 " href="#contacto"><i class="material-icons">feedback</i>Contacto</a></p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <p class="white-text"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
+                    </div>
+                </div>
+             </div>
+        </footer>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/miScript.js"></script>
 </body>
 </html>

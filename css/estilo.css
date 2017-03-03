@@ -8,10 +8,11 @@ and open the template in the editor.
     Author     : ignacio
 */
 
-#footer {
-	position: fixed !important; 
-	bottom: 0!important; 
-	width: 100%;
+footer {
+    position: fixed !important; 
+    bottom: 0!important; 
+    width: 100%;
+    height: 80px;
     z-index: 99;
 }
 body {
@@ -36,34 +37,34 @@ body {
 }
 #opcion1 .menuOculto li, #opcion2 .menuOculto li, #opcion3 .menuOculto li, #opcion4 .menuOculto li {
 	font-size: 0.65em;
-    transform: rotate(0deg) translateY(-50px);
+    transform: rotate(180deg) translateY(-50px);
     filter: opacity(0);
     color: white;
     
-    -webkit-transition: display 1s ease,
+    -webkit-transition: display 0.75s ease,
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
         transform 1s 1s ease-in-out,
         filter 1s ease;
-    -moz-transition: display 1s ease,
+    -moz-transition: display 0.75s ease,
         transform 1s ease, 
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
         filter 1s ease;
 
-    -o-transition:  transform 1s ease,
+    -o-transition:  transform 0.75s ease,
         display 1s ease,
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
         filter 1s ease;
-    -ms-transition: transform 1s ease,
+    -ms-transition: transform 0.75s ease,
         display 1s ease,
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
         filter 1s ease;
-    transition: transform 1s ease,
+    transition: transform 0.75s ease,
         display 1s 1s ease,
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
         filter 1s ease;
 }
 #opcion1:hover .menuOculto li, #opcion2:hover .menuOculto li, #opcion3:hover .menuOculto li, #opcion4:hover .menuOculto li {
-    transform: rotate(365deg) translateY(0);
+    transform: rotate(355deg) translateY(0);
     background-color: lightgray;
     box-shadow: 1px 2px 2px grey;
     filter: opacity(1);
@@ -72,4 +73,12 @@ body {
 #opcion1:hover .menuOculto li:hover, #opcion2:hover .menuOculto li:hover, #opcion3:hover .menuOculto li:hover, #opcion4:hover .menuOculto li:hover {
     background-color: white;
     background-color: #F8F8F8;
+}
+
+#ultimaFila {
+    margin-bottom: 125px;
+}
+
+.cajaTweet {
+    
 }
