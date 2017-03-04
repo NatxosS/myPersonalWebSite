@@ -1,0 +1,22 @@
+{
+  "name": "mypersonalwebsite",
+  "homepage": "https://www.ignaciolb.es",
+  "authors": [
+    "“Ignacio” <natxossiles@gmail.com>"
+  ],
+  "description": "mi pagina web online (portfolio)",
+  "main": "index.php",
+  "keywords": [
+    "programador",
+    "web",
+    "tutoriales",
+    "php",
+    "html",
+    "css",
+    "javascript",
+    "java",
+    "desarrollador",
+    "ignacio"
+  ],
+  "license": "MIT"
+}
