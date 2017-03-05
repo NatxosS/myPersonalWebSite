@@ -87,60 +87,17 @@
             https://geekytheory.com/como-usar-la-api-de-twitter-en-php -->
             
            <div class="divider"></div> 
-            <div class="row" id="redSocial">
-                <h5>Mis últimos Tweet's</h5>
+            <div class="row center" id="redSocial">
+                <?php
+                require_once 'include/showTweets.php';
+
+                $mostrarT = new Twitter();
                 
-                <div class="col s12 m4 center" id="tweetUno">
-                    <?php
-                    /*require_once 'include/showTweets.php';
-                    
-                    $mostrarT = new Twitter();
-                    $mostrarT->getTweets();*/
-                    ?>
-                    <!-- <div class="preloader-wrapper active">
-                        <div class="spinner-layer spinner-red-only">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="gap-patch">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col s12 m3 center" id="tweetDos">
-                    <div class="preloader-wrapper active">
-                        <div class="spinner-layer spinner-red-only">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="gap-patch">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m3 center" id="tweetTres">
-                    <!-- <div class="preloader-wrapper active">
-                        <div class="spinner-layer spinner-red-only">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="gap-patch">
-                                <div class="circle"></div>
-                            </div>
-                            <div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
+                
+                $mostrarT->mostrarCabecera($mostrarT->getArrayTweets($mostrarT->getTweets()));
+                $mostrarT->displayTweet($mostrarT->getArrayTweets($mostrarT->getTweets()));
+                ?>
+
             </div>
             
             <!-- **************** SECCION DE CONTACTO  *****************   -->
