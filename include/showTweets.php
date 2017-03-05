@@ -12,13 +12,9 @@ class Twitter {
     public function getTweets() {
         
         require_once 'TwitterAPIExchange.php';
+        require_once 'proteted/autopw.php';
 
-        $settings = array(          // introducimos todas nuestras variables para acceder
-            'oauth_access_token' => "623186846-JesHAJNhYyENgEn0mehqxbhEezgXHjJhUuGoNDg6", 
-            'oauth_access_token_secret' => "8yEgvbJrlaSUxDwO8Gdmisrm5cGqRxiUWbBjiRwFdV2m2",
-            'consumer_key' => "0tbejMFz4uDeVs8qMhcidMhfp",
-            'consumer_secret' => 'Ber84U52EzITKvQa1pcCpGIb9lmBR4c0ETbCvAOuxVMEnCNwVZ'
-        );
+        $settings = credenciales();
         
         $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
         $getfield = '?screen_name=Natxoss&count=3';

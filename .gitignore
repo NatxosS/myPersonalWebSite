@@ -1,2 +1,4 @@
 #ignoramos la carpeta bower_components
 bower_components
+#ignoramos la carpeta proteted
+include/proteted
