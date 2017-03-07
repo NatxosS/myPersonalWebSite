@@ -20,7 +20,7 @@ class Twitter {
         $getfield = '?screen_name=Natxoss&count=3';
         $requestMethod = 'GET';
         $twitter = new TwitterAPIExchange($settings);
-        $json = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest();  
+        $json = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest(true);  
         
         // hacemos la petición a traves de la libreria TwitterAPIExchange.php y recibmos el JSON
         
@@ -30,8 +30,15 @@ class Twitter {
     public function getArrayTweets($jsoraw) {
         
         $array = json_decode($jsoraw);      // lo convertimos a un objeto php
+
         $datos;
         $num_items = count($array);     // contamos los elementos que contiene
+        /*var_dump($num_items);
+        var_dump($array);
+        
+        if () {
+            
+        }*/
 
         for ($i=0; $i<$num_items; $i++) {   /* y los recorremos para hacer un array de dos dimensiones con 
                                             *  la información que necesitamos de cada tweet */
@@ -172,5 +179,21 @@ class Twitter {
                 break;
         }
     }
+    
+    public function mostrarError() {
+        
+        echo '
+    <div class="row">
+      <div class="col s12 m5">
+        <div class="card-panel teal">
+          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+          </span>
+        </div>
+      </div>
+    </div>
+            ';
+    }
 }
+
 

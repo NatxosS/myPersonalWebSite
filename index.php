@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
     <head>
         <meta charset="UTF-8">
@@ -25,28 +26,29 @@
         </header>
         
         <!-- **************** SECCION DE PRESENTACIÓN  *****************   -->
+        <div class="container-fluid">
+            <div class="row" id="presentacion">
+                <div class="col s3 offset-s1 m3 offset-m1">
+                    <img src="images/yo.jpg.jpg" alt="" class="circle responsive-img">
+                </div>
+                <div class="col s8 offset-s1 m6">
+                    <h3 class="header">Ignacio López Ballesteros</h3>
+                    <div class="card small horizontal">
+                        <div class="card-image">
 
-        <div class="row" id="presentacion">
-            <div class="col s3 offset-s1 m3 offset-m1">
-                <img src="images/yo.jpg.jpg" alt="" class="circle responsive-img">
-            </div>
-            <div class="col s8 offset-s1 m6">
-                <h3 class="header">Ignacio López Ballesteros</h3>
-                <div class="card small horizontal">
-                    <div class="card-image">
-
-                    </div>
-                    <div class="card-stacked">
-                        <div class="card-content">
-                            <p>Esta página esta pensada para mostrar mis trabajos más importantes y servir o servirme de guía con algunos de los manuales que hice durante los dos cursos del ciclo de grado superior de Desarrollo de Aplicaciones Web realizado de forma presencial en el I.E.S Aguadulce de Aguadulce (Roquetas de Mar - Almería)</p> 
                         </div>
-                        <div class="card-action">
-                            <a href="http://www.iesaguadulce.es/centro/">I.E.S Aguadulce</a>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <p>Esta página esta pensada para mostrar mis trabajos más importantes y servir o servirme de guía con algunos de los manuales que hice durante los dos cursos del ciclo de grado superior de Desarrollo de Aplicaciones Web realizado de forma presencial en el I.E.S Aguadulce de Aguadulce (Roquetas de Mar - Almería)</p> 
+                            </div>
+                            <div class="card-action">
+                                <a href="http://www.iesaguadulce.es/centro/">I.E.S Aguadulce</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>  
+            </div>  
+        </div>
         
         <!-- **************** SECCION DE MUESTRA DE MIS TRABAJOS  *****************   -->
         
@@ -89,13 +91,13 @@
            <div class="divider"></div> 
             <div class="row center" id="redSocial">
                 <?php
-                require_once 'include/showTweets.php';
+                    require_once 'include/showTweets.php';
 
-                $mostrarT = new Twitter();
-                
-                
-                $mostrarT->mostrarCabecera($mostrarT->getArrayTweets($mostrarT->getTweets()));
-                $mostrarT->displayTweet($mostrarT->getArrayTweets($mostrarT->getTweets()));
+                    $mostrarT = new Twitter();
+
+
+                    $mostrarT->mostrarCabecera($mostrarT->getArrayTweets($mostrarT->getTweets()));
+                    $mostrarT->displayTweet($mostrarT->getArrayTweets($mostrarT->getTweets()));
                 ?>
 
             </div>
@@ -105,24 +107,24 @@
             <div class="divider"></div>
             <div class="row" id="contacto" name="contacto">           <!-- Sección de contacto -->
                 <h5>Contacto</h5>
-                <form class="col s12" method="post" action="enviar();" id="form">
+                <form class="col s12" id="form">
                     <div class="row">
                         <div class="input-field col m6 s10">
-                            <input id="nombre" type="text" name="nombre" class="validate">
-                            <label for="nombre">Nombre: </label>
+                            <input id="nombre" type="text" name="nombre" class="validate" required minlength="3" />
+                            <label data-error="Nombre erroneo" data-success="correcto" for="nombre">Nombre: </label>
                         </div>
                         <div class="input-field col m6 s10">
-                            <input id="email" name="email" type="email" class="validate">
-                            <label for="email" data-error="Email erroneo o inexistente" data-success="correcto">Email</label>
+                            <input id="suEmail" name="suEmail" type="email" class="validate" required />
+                            <label for="suEmail" data-error="Email erroneo" data-success="correcto">Email</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="texto" name="texto" class="materialize-textarea"></textarea>
-                            <label for="texto">Introduzca su petición, sugerencia...</label>
+                            <textarea id="texto" name="texto" class="materialize-textarea validate" required minlength="15" /></textarea>
+                            <label data-error="Texto erroneo" data-success="correcto" for="texto">Introduzca su petición, sugerencia...</label>
                         </div>
                     </div>
-                    <div class="row" id="ultimaFila">
+                    <div class="row">
                         <div class="input-field col s6">
                             <input type="checkbox" class="filled-in" id="acepta" />
                             <label for="acepta">Acepta que se almacenen sus datos</label>
@@ -130,6 +132,7 @@
                         <div class="input-field col s6">
                             <input type="submit" class="btn-large" id="enviar" value="Enviar" disabled="true" />
                         </div>
+                        <div class="card-panel" id="ultimaFila"></div>
                     </div>
                 </form>
             </div>
@@ -138,7 +141,7 @@
         <footer class="page-footer teal darken-2 valign-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col l6 s12">
+                    <div class="col l6 s12" id="footerIzq">
                        <p class="white-text"><a class="grey-text text-lighten-4 " href="#contacto"><i class="material-icons">feedback</i>Contacto</a></p>
                     </div>
                     <div class="col l4 offset-l2 s12">
