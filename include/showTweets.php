@@ -1,12 +1,5 @@
 <?php
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 class Twitter {
     
     public function getTweets() {
@@ -20,7 +13,7 @@ class Twitter {
         $getfield = '?screen_name=Natxoss&count=3';
         $requestMethod = 'GET';
         $twitter = new TwitterAPIExchange($settings);
-        $json = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest(true);  
+        $json = $twitter->setGetfield($getfield)->buildOauth($url, $requestMethod)->performRequest();  
         
         // hacemos la petición a traves de la libreria TwitterAPIExchange.php y recibmos el JSON
         
@@ -31,14 +24,8 @@ class Twitter {
         
         $array = json_decode($jsoraw);      // lo convertimos a un objeto php
 
-        $datos;
+        $datos = "";
         $num_items = count($array);     // contamos los elementos que contiene
-        /*var_dump($num_items);
-        var_dump($array);
-        
-        if () {
-            
-        }*/
 
         for ($i=0; $i<$num_items; $i++) {   /* y los recorremos para hacer un array de dos dimensiones con 
                                             *  la información que necesitamos de cada tweet */
@@ -72,12 +59,13 @@ class Twitter {
     }
     
     public function displayTweet($rawdata) {
-        
+
         setlocale(LC_ALL,"es_ES.UTF-8");
-                                                // hacemos un for para mostrar los 3 tweet's
+        $cadenaHTML = '' ;
+                                                // hacemos un for para mostrar los 3 tweet's        
         for ($i=0; $i<count($rawdata); $i++) {
-            echo '<div class="col s12 m4 center" id="'.($i+1).'">';
-            echo '  <div class="card grey lighten-5 z-depth-1">';
+            $cadenaHTML = $cadenaHTML . '<div class="col s12 m4 center" id="'.($i+1).'">';
+            $cadenaHTML = $cadenaHTML . '<div class="card grey lighten-5 z-depth-1">';
             
                     /* hacemos lo siguiente para pasar la fecha que nos entrega la API de twitter a formato UNIX y poder trabajar
                     * con ella como mejor nos convenga */
@@ -93,32 +81,37 @@ class Twitter {
                 // y la traducimos a formato local a nuestro gusto
             $horaFecha = strftime("%A", $fechaUnix).", ".  strftime("%d de ", $fechaUnix). ucfirst(strftime("%B del %Y", $fechaUnix)." a las ".  strftime("%T", $fechaUnix));
             
-            echo '      <div class="card-content"><span class="card-title">'.$horaFecha.'</span>';      // mostramos la fecha y hora del tweet
+            // Empezamos a concatenar código HTML
+            
+            $cadenaHTML = $cadenaHTML . '<div class="contenido card-content"><span id="fecha'.$i.'" class="card-title">'.$horaFecha.'</span>';      // mostramos la fecha y hora del tweet
             
             
                                                 // con esto estamos averiguando si es un retweet o no 
             if (count($rawdata[$i]) > 4) {
-                echo '          <p><img class="circle responsive-img" src="'.$rawdata[$i][5].'" /><br />';  // si lo es mostramos la imagen del autor
+                $cadenaHTML = $cadenaHTML . '<p><img class="circle responsive-img" src="'.$rawdata[$i][5].'" /><br />';  // si lo es mostramos la imagen del autor
             } else {
-                echo '          <p><img class="circle responsive-img" src="'.$rawdata[$i][1].'" /><br />';  // si no la mia
+                $cadenaHTML = $cadenaHTML . '<p><img class="circle responsive-img" src="'.$rawdata[$i][1].'" /><br />';  // si no la mia
             }
-            echo               $rawdata[$i][3].'</p>';  // el texto del tweet
-            echo '</div><div class="card-action">';
+            $cadenaHTML = $cadenaHTML .               $rawdata[$i][3].'</p>';  // el texto del tweet
+            $cadenaHTML = $cadenaHTML . '</div><div class="card-action">';
                                             // dependiendo de si es retweet mostramos el nombre del autor o el nuestro
             if (count($rawdata[$i]) > 4) {
-                echo $rawdata[$i][4];
+                $cadenaHTML = $cadenaHTML . $rawdata[$i][4];
             } else {
-                echo $rawdata[$i][2];
+                $cadenaHTML = $cadenaHTML . $rawdata[$i][2];
             }
 
-            echo '</div></div></div>';
+            $cadenaHTML = $cadenaHTML . '</div></div></div>';
         }
+               
+
+        return $cadenaHTML;
     }
             // función para mostrar la cabecera de la sección de los últimos tweets
     
     public function mostrarCabecera($rawdata) {
         
-        echo '<div class="chip"><img src="'.$rawdata[0][1].'" alt="" />'.$rawdata[0][2].'</div><h5> Mis últimos Tweet\'s</h5><div class="divider"></div> ';
+        return '<div class="chip"><img src="'.$rawdata[0][1].'" alt="" />'.$rawdata[0][2].'</div><h5> Mis últimos Tweet\'s</h5><div class="divider"></div> ';
     }
     
         // switch para sacar el mes en numero con las 3 letras que nos da twitter
@@ -178,21 +171,6 @@ class Twitter {
             default:
                 break;
         }
-    }
-    
-    public function mostrarError() {
-        
-        echo '
-    <div class="row">
-      <div class="col s12 m5">
-        <div class="card-panel teal">
-          <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
-          </span>
-        </div>
-      </div>
-    </div>
-            ';
     }
 }
 

@@ -267,7 +267,6 @@ class TwitterAPIExchange
         $this->httpStatusCode = curl_getinfo($feed, CURLINFO_HTTP_CODE);
         if (($error = curl_error($feed)) !== '')
         {
-            $this->mostrarErrorTwitter();
             curl_close($feed);
             throw new \Exception($error);
         }

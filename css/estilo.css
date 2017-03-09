@@ -82,3 +82,9 @@ body {
 #ultimaFila {
     height: 120px;
 }
+#fecha0, #fecha1, #fecha2 {
+    font-size: 0.85em;
+}
+.contenido {
+    /*height: 200px;*/
+}

@@ -90,15 +90,7 @@
             
            <div class="divider"></div> 
             <div class="row center" id="redSocial">
-                <?php
-                    require_once 'include/showTweets.php';
-
-                    $mostrarT = new Twitter();
-
-
-                    $mostrarT->mostrarCabecera($mostrarT->getArrayTweets($mostrarT->getTweets()));
-                    $mostrarT->displayTweet($mostrarT->getArrayTweets($mostrarT->getTweets()));
-                ?>
+                
 
             </div>
             
