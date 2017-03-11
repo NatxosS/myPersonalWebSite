@@ -20,10 +20,10 @@ if (isset($_POST['nombre']) && isset($_POST['suEmail']) && isset($_POST['texto']
     
     $jsondata = array();
     
-    $namebd = "contactosPersonalWeb";       // preparamos la conexión
-    $dsn = "localhost";
-    $usuario = 'dwes';
-    $contrasenia = 'abc123.';
+    $namebd = "ignaciolradwes";       // preparamos la conexión  -- contactosPersonalWeb  --  ignaciolradwes
+    $dsn = "ignaciolradwes.mysql.db";   // -- localhost  --  ignaciolradwes.mysql.db
+    $usuario = 'ignaciolradwes';           // -- dwes  -- ignaciolradwes
+    $contrasenia = 'Enigma98'; // -- abc123. -- Enigma98
     
     @ $database = new mysqli($dsn, $usuario, $contrasenia, $namebd);        // hacemos la conexión
     

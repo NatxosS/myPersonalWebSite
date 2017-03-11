@@ -1,4 +1,6 @@
-#ignoramos la carpeta bower_components
+	#ignoramos la carpeta bower_components
 bower_components
-#ignoramos la carpeta proteted
+	#ignoramos la carpeta proteted
 include/proteted
+	#ignoramos la carpeta nbproject
+nbproject

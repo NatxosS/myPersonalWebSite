@@ -15,10 +15,10 @@ $(function () {
         url: "include/mostrarTweets.php", // y los mandamos a esta URL
         dataType: "json",
         beforeSend: function () {
-            $("#redSocial").html("<span class='blue-text text-darken-2'>Conectando con Twitter...</span>");
+            $("#redSocial").html("<span class='blue-text text-darken-2'>Conectando con Twitter...   </span><div class='preloader-wrapper small active'><div class='spinner-layer spinner-green-only'><div class='circle-clipper left'><div class='circle'></div></div><div class='gap-patch'><div class='circle'></div></div><div class='circle-clipper right'><div class='circle'></div></div></div></div>");
         },
         error: function (data) {     // si hay algún fallo en el envio mostramos el mensaje de error
-            $("#redSocial").html("<span class='red-text text-darken-2'>Error al conectar con Twitter</span>");
+            $("#redSocial").html("<span class='red-text text-darken-2'>Error al conectar con Twitter"+data+"</span>");
         },
         success: function (result) {     // si el envio fue correcto
             $("#redSocial").html(result.data);

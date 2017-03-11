@@ -53,6 +53,9 @@ class Twitter {
                 
                 $imagen_autor = $user->retweeted_status->user->profile_image_url;
                 $datos[$i][5] = $imagen_autor;
+                
+                $text_autor = $user->retweeted_status->user->profile_image_url;
+                $datos[$i][6] = $text_autor;
             }
         }
         return $datos;
@@ -92,7 +95,14 @@ class Twitter {
             } else {
                 $cadenaHTML = $cadenaHTML . '<p><img class="circle responsive-img" src="'.$rawdata[$i][1].'" /><br />';  // si no la mia
             }
-            $cadenaHTML = $cadenaHTML .               $rawdata[$i][3].'</p>';  // el texto del tweet
+                                              // el texto del tweet
+            if (count($rawdata[$i]) > 4) {
+                $cadenaHTML = $cadenaHTML . $rawdata[$i][6].'</p>';
+            } else {
+                $cadenaHTML = $cadenaHTML . $rawdata[$i][3].'</p>';
+            }
+            
+            
             $cadenaHTML = $cadenaHTML . '</div><div class="card-action">';
                                             // dependiendo de si es retweet mostramos el nombre del autor o el nuestro
             if (count($rawdata[$i]) > 4) {

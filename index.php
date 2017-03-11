@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <title>Ignacio López Ballesteros</title>
         <!--Import Google Icon Font-->
-        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
         <link type="text/css" rel="stylesheet" href="css/estilo.css" />
@@ -32,19 +32,18 @@
                     <img src="images/yo.jpg.jpg" alt="" class="circle responsive-img">
                 </div>
                 <div class="col s8 offset-s1 m6">
-                    <h3 class="header">Ignacio López Ballesteros</h3>
-                    <div class="card small horizontal">
-                        <div class="card-image">
-
-                        </div>
-                        <div class="card-stacked">
-                            <div class="card-content">
-                                <p>Esta página esta pensada para mostrar mis trabajos más importantes y servir o servirme de guía con algunos de los manuales que hice durante los dos cursos del ciclo de grado superior de Desarrollo de Aplicaciones Web realizado de forma presencial en el I.E.S Aguadulce de Aguadulce (Roquetas de Mar - Almería)</p> 
+                    <div class="row">
+                        <p class="flow-text">Ignacio López Ballesteros</p>
+                    </div>
+                    <div class="row">
+                            <div class="col s12">
+                                <div class="row">
+                                    <blockquote class="flow-text">Esta página esta pensada para mostrar mis trabajos más importantes y servir o servirme de guía con algunos de los manuales que hice durante los dos cursos del ciclo de grado superior de Desarrollo de Aplicaciones Web realizado de forma presencial en el I.E.S Aguadulce de Aguadulce (Roquetas de Mar - Almería)</blockquote> 
+                                </div>
+                                <div class="row">
+                                    <a class="flow-text" href="http://www.iesaguadulce.es/centro/">I.E.S Aguadulce</a>
+                                </div>
                             </div>
-                            <div class="card-action">
-                                <a href="http://www.iesaguadulce.es/centro/">I.E.S Aguadulce</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>  
@@ -88,7 +87,7 @@
             <!-- **************** SECCION DE CONEXIÓN A API DE RED SOCIAL  *****************   
             https://geekytheory.com/como-usar-la-api-de-twitter-en-php -->
             
-           <div class="divider"></div> 
+           <div class="divider" id="divisorRedSocial"></div> 
             <div class="row center" id="redSocial">
                 
 
@@ -103,7 +102,7 @@
                     <div class="row">
                         <div class="input-field col m6 s10">
                             <input id="nombre" type="text" name="nombre" class="validate" required minlength="3" />
-                            <label data-error="Nombre erroneo" data-success="correcto" for="nombre">Nombre: </label>
+                            <label data-error="Nombre erroneo (3 caracteres como mínimo)" data-success="correcto" for="nombre">Nombre: </label>
                         </div>
                         <div class="input-field col m6 s10">
                             <input id="suEmail" name="suEmail" type="email" class="validate" required />
@@ -113,15 +112,15 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <textarea id="texto" name="texto" class="materialize-textarea validate" required minlength="15" /></textarea>
-                            <label data-error="Texto erroneo" data-success="correcto" for="texto">Introduzca su petición, sugerencia...</label>
+                            <label data-error="Texto erroneo (15 caracteres como mínimo)" data-success="correcto" for="texto">Introduzca su petición, sugerencia...</label>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6" title="Los datos almacenados serán el nombre, email y el comentario introducido">
                             <input type="checkbox" class="filled-in" id="acepta" />
-                            <label for="acepta">Acepta que se almacenen sus datos</label>
+                            <label for="acepta">Acepta que sus datos sean almacenados</label>
                         </div>
-                        <div class="input-field col s6">
+                        <div class="input-field col s12 m6">
                             <input type="submit" class="btn-large" id="enviar" value="Enviar" disabled="true" />
                         </div>
                         <div class="card-panel" id="ultimaFila"></div>
@@ -133,11 +132,11 @@
         <footer class="page-footer teal darken-2 valign-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col l6 s12" id="footerIzq">
+                    <div class="col l6 s6" id="footerIzq">
                        <p class="white-text"><a class="grey-text text-lighten-4 " href="#contacto"><i class="material-icons">feedback</i>Contacto</a></p>
                     </div>
-                    <div class="col l4 offset-l2 s12">
-                        <p class="white-text"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
+                    <div class="col l4 offset-l2 s6">
+                        <p class="white-text"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="img-responsive" alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
                     </div>
                 </div>
              </div>

@@ -1,12 +1,43 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
 /* 
     Created on : 26-feb-2017, 9:44:40
     Author     : ignacio
 */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../bower_components/materialize/fonts/iconos/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(../bower_components/materialize/fonts/iconos/MaterialIcons-Regular.woff2) format('woff2'),
+       url(../bower_components/materialize/fonts/iconos/MaterialIcons-Regular.woff) format('woff'),
+       url(../bower_components/materialize/fonts/iconos/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
 
 footer {
     position: fixed !important; 
@@ -80,11 +111,17 @@ body {
 }
 
 #ultimaFila {
-    height: 120px;
+    min-height: 150px;
 }
 #fecha0, #fecha1, #fecha2 {
     font-size: 0.85em;
 }
-.contenido {
-    /*height: 200px;*/
+
+#divisorRedSocial {
+    margin-bottom: 20px;
+}
+blockquote{
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left: 5px solid #4db6ac; /* Just change the color value and that's it*/
 }
