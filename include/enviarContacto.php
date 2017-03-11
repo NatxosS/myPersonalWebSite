@@ -1,5 +1,7 @@
 <?php
 
+require_once 'proteted/autopw.php';
+
 function enviarEmail($email) {      // función que nos envia un email a nuestro correo informandonos que hemos recibido un contacto
     
     $para      = 'ignacio_siles@hotmail.com';
@@ -20,10 +22,10 @@ if (isset($_POST['nombre']) && isset($_POST['suEmail']) && isset($_POST['texto']
     
     $jsondata = array();
     
-    $namebd = "ignaciolradwes";       // preparamos la conexión  -- contactosPersonalWeb  --  ignaciolradwes
-    $dsn = "ignaciolradwes.mysql.db";   // -- localhost  --  ignaciolradwes.mysql.db
-    $usuario = 'ignaciolradwes';           // -- dwes  -- ignaciolradwes
-    $contrasenia = 'Enigma98'; // -- abc123. -- Enigma98
+    $namebd = nombreBD();
+    $dsn = dsn();
+    $usuario = ususario();
+    $contrasenia = contrasena();
     
     @ $database = new mysqli($dsn, $usuario, $contrasenia, $namebd);        // hacemos la conexión
     
