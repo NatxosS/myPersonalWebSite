@@ -29,7 +29,8 @@
         <div class="container-fluid">
             <div class="row" id="presentacion">
                 <div class="col s3 offset-s1 m3 offset-m1">
-                    <img src="images/yo.jpg.jpg" alt="" class="circle responsive-img">
+                    <div class="row cajaPostImagen"></div>
+                    <div class="row cajaImagen"><div class="col m9 offset-m1 s12"><img src="images/yo.jpg.jpg" alt="" class="circle responsive-img"></div></div>
                 </div>
                 <div class="col s8 offset-s1 m6">
                     <div class="row">
@@ -38,10 +39,10 @@
                     <div class="row">
                             <div class="col s12">
                                 <div class="row">
-                                    <blockquote class="flow-text">Esta página esta pensada para mostrar mis trabajos más importantes y servir o servirme de guía con algunos de los manuales que hice durante los dos cursos del ciclo de grado superior de Desarrollo de Aplicaciones Web realizado de forma presencial en el I.E.S Aguadulce de Aguadulce (Roquetas de Mar - Almería)</blockquote> 
+                                    <blockquote class="flow-text presentacion">Esta página esta pensada para mostrar mis trabajos más importantes y servir o servirme de guía con algunos de los manuales que hice durante los dos cursos del ciclo de grado superior de Desarrollo de Aplicaciones Web realizado de forma presencial en el I.E.S Aguadulce de Aguadulce (Roquetas de Mar - Almería)</blockquote> 
                                 </div>
                                 <div class="row">
-                                    <a class="flow-text" href="http://www.iesaguadulce.es/centro/">I.E.S Aguadulce</a>
+                                    <p class="flow-text"><a class="col s6" href="http://www.iesaguadulce.es/centro/">I.E.S Aguadulce</a><a class="segundoEnlace col s6" href="https://www.linkedin.com/in/ignaciolb">Mi LinkedIn</a></p>
                                 </div>
                             </div>
                     </div>
@@ -133,7 +134,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col l6 s6" id="footerIzq">
-                       <p class="white-text"><a class="grey-text text-lighten-4 " href="#contacto"><i class="material-icons">feedback</i>Contacto</a></p>
+                       <p class="white-text"><a title="Contacto" class="grey-text text-lighten-4" href="#contacto"><i class="material-icons">feedback</i></a> &nbsp;&nbsp;  <a title="Mi cuenta GitHub" href="https://github.com/NatxosS"><img src="images/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png" /></a></p>
                     </div>
                     <div class="col l4 offset-l2 s6">
                         <p class="white-text"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="img-responsive" alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
@@ -143,7 +144,7 @@
         </footer>
 
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/miScript.js"></script>
 </body>

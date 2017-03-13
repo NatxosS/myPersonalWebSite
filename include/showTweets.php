@@ -42,7 +42,7 @@ class Twitter {
             $datos[$i][0] = $fecha;
             $datos[$i][1] = $url_imagem;
             $datos[$i][2] = $screen_name;
-            $datos[$i][3] = $tweet;
+            $datos[$i][3] = $this->buscarEnlaces($tweet);
 
             
                                             // Si el tweet es un retweet de otro usuario mostramos el enlace a su perfil y su imagen
@@ -54,7 +54,8 @@ class Twitter {
                 $imagen_autor = $user->retweeted_status->user->profile_image_url;
                 $datos[$i][5] = $imagen_autor;
                 
-                $text_autor = $user->retweeted_status->user->profile_image_url;
+                $text_autor = $user->retweeted_status->text;
+                $text_autor = $this->buscarEnlaces($text_autor);
                 $datos[$i][6] = $text_autor;
             }
         }
@@ -181,6 +182,28 @@ class Twitter {
             default:
                 break;
         }
+    }
+    
+    public function buscarEnlaces($cadena) {        // Utilizamos esta función para buscar dentro del tweet alguna posible URL, hastag, o referencia a otro perfil
+                                                    // y ponerla como enlace
+        
+        $cadenaPartida = explode(" ", $cadena);
+        
+        for ($i=0; $i<count($cadenaPartida); $i++) {
+            if (preg_match("/^http/", $cadenaPartida[$i])) {
+                $cadenaPartida[$i] = "<a href='".$cadenaPartida[$i]."' target='_blanck'>".$cadenaPartida[$i]."</a>";
+            }
+            if (preg_match("/^@/", $cadenaPartida[$i])) {
+                $cadenaPartida[$i] = "<a href='https://twitter.com/".substr($cadenaPartida[$i], 1)."' target='_blanck'>".$cadenaPartida[$i]."</a>";
+            }
+            if (preg_match("/^#/", $cadenaPartida[$i])) {
+                $cadenaPartida[$i] = "<a href='https://twitter.com/hashtag/".substr($cadenaPartida[$i], 1)."?src=hash' target='_blanck'>".$cadenaPartida[$i]."</a>";
+            }
+        }
+        
+        $cadena = implode(" ", $cadenaPartida);
+        
+        return $cadena;
     }
 }
 
