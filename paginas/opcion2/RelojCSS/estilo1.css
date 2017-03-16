@@ -16,7 +16,7 @@
     min-height: 100px;
     border-radius: 60%;         /* lo redondeamos */
     border: 15px groove gold;       /* borde dorado con efecto groove para dar relieve */
-    margin: auto 10px;                    /* centramos */
+    margin: auto;                    /* centramos */
     background: radial-gradient(brown 25%, #653203);    /* fondo con gradiente radial */
     box-shadow: 10px 10px 1px orange    /* le ponemos sombra al reloj  */
 }
@@ -36,7 +36,7 @@
     height: 15px;
     margin: auto;
     top: 48%;
-    left: 42.5%;
+    left: 42%;
     background: linear-gradient(0deg, grey, #653203);  /* gradiente lineal a la aguja para dar sensación de relieve */
     border-radius: 10px;
     z-index: 5;
@@ -53,7 +53,7 @@
     height: 15px;
     margin: auto;
     top: 48%;
-    left: 42.5%;
+    left: 42%;
     background: linear-gradient(0deg, blue, black);
     border-radius: 10px;
     z-index: 6;                 /* el minutero estara por encima del resto */
@@ -69,7 +69,7 @@
     height: 15px;
     margin: auto;
     top: 48%;
-    left: 42.5%;
+    left: 42%;
     background: linear-gradient(0deg, green, black);
     border-radius: 10px;
     z-index: 6;                 /* el minutero estara por encima del resto */
@@ -101,4 +101,15 @@
 #tres {
     top: 42.5%;
     left: 92%
+}
+h3 {
+    text-align: right;
+    vertical-align: center;
+}
+
+#volver {
+    font-family: arial black;
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    padding: 5px;
 }

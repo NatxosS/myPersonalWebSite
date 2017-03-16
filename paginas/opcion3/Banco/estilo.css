@@ -1,0 +1,110 @@
+/* 
+    Created on : 27-oct-2016, 21:16:53
+    Author     : ignacio
+*/
+body {
+    margin: 0px 40px
+}
+
+header {
+    background-color: buttonhighlight;
+    font-family: fantasy;
+}
+
+a {
+    text-decoration: none;
+}
+
+header a {
+    color:black
+}
+
+header h1 {
+    text-align: center;
+    font-size: 4em
+}
+
+nav {
+    background-color: sandybrown;
+}
+nav table {
+    border-spacing: 25px;
+    margin: auto;
+}
+
+   /* ESTILO A LOS BOTONES DE ENLACES  */
+
+nav td input {
+    margin: auto;
+    text-align: center;
+    color:black;
+    background-color: sandybrown;
+    font-size: 2.5em;
+}
+nav td input:hover {
+    border: 2px dashed saddlebrown;
+    color: white
+}
+
+/* ---------------- contenido principal --------- */
+
+
+section  {
+    padding: 10px
+}
+
+section p {
+        font-size: 1.25em
+}
+
+.tabla {
+    font-size: 1.5em;
+    margin: 0px auto;
+    border-spacing: 25px
+}
+
+.tabla tr {
+    border-spacing: 0px;
+    font-size: 0.5em
+}
+
+#cabecera {
+    font-size: 1em;
+    
+}
+
+.colConcepto {
+    width: 100px;
+    text-align: left
+}
+
+.slide {
+    margin: 0px auto;
+    width: 800px;
+    height: 450px;
+    overflow-x: hidden;
+    overflow-y: hidden
+}
+
+.slide div {
+    margin: 0px auto;
+    margin-bottom: 10px;
+    width: 800px;
+    height: 450px;
+    overflow-x: hidden;
+    overflow-y: hidden
+}
+.rojo {
+    color: red;
+}
+
+#total {
+    padding-left: 100px;
+    font-weight: bold;
+}
+#volver {
+    font-family: arial black;
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    padding: 5px;
+}

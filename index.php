@@ -4,10 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Ignacio López Ballesteros</title>
-        <!--Import Google Icon Font-->
-        <!-- <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="css/estilo.css" />
 
         <!--Let browser know website is optimized for mobile-->
@@ -18,33 +17,47 @@
     
     <body>
         <header>
-            <nav>
-                <div class="nav-wrapper teal darken-2">
-                    <a href="#" class="brand-logo center">Programador Web</a>
-                </div>
-            </nav>
+            <div >
+                <nav>
+                    <div class="nav-wrapper light-blue">
+                        <a href="#!" class="brand-logo center">PROGRAMADOR <span class="hide-on-small-only">WEB</span></a>
+                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down" id="menuWeb">
+                            <li><a title="Contacto" href="#divisorContacto"><i class="fa fa-comments" aria-hidden="true"></i></a></li>
+                            <li><a title="Mi cuenta GitHub" href="https://github.com/NatxosS" target='_blank'><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                            <li><a title="Conexión API Twitter"href="#divisorRedSocial"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        </ul>
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="#divisorContacto"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;Contacto</a></li>
+                            <li><a href="https://github.com/NatxosS" target='_blank'><i class="fa fa-github" aria-hidden="true"></i>&nbsp;GitHub</a></li>
+                            <li><a href="#divisorRedSocial"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;API Twitter</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </header>
         
         <!-- **************** SECCION DE PRESENTACIÓN  *****************   -->
         <div class="container-fluid">
             <div class="row" id="presentacion">
-                <div class="col s3 offset-s1 m3 offset-m1">
-                    <div class="row cajaPostImagen"></div>
-                    <div class="row cajaImagen"><div class="col m9 offset-m1 s12"><img src="images/yo.jpg.jpg" alt="" class="circle responsive-img"></div></div>
+                <div class="col s3 offset-s2 m3 offset-m1">
+                    <div class="row cajaImagen">
+                        <div class="col m9 offset-m1 s12"><img src="images/yo.jpg.jpg" alt="Mi foto" class="circle responsive-img"></div>
+                    </div>
+                    <div class="row cajaEnlace">
+                        <h4 class="flow-text center-align"><a href="https://www.linkedin.com/in/ignaciolb" target='_blank'>LinkedIn</a></h4>
+                    </div>
                 </div>
                 <div class="col s8 offset-s1 m6">
                     <div class="row">
                         <p class="flow-text">Ignacio López Ballesteros</p>
                     </div>
                     <div class="row">
-                            <div class="col s12">
-                                <div class="row">
-                                    <blockquote class="flow-text presentacion">Esta página esta pensada para mostrar mis trabajos más importantes y servir o servirme de guía con algunos de los manuales que hice durante los dos cursos del ciclo de grado superior de Desarrollo de Aplicaciones Web realizado de forma presencial en el I.E.S Aguadulce de Aguadulce (Roquetas de Mar - Almería)</blockquote> 
-                                </div>
-                                <div class="row">
-                                    <p class="flow-text"><a class="col s6" href="http://www.iesaguadulce.es/centro/">I.E.S Aguadulce</a><a class="segundoEnlace col s6" href="https://www.linkedin.com/in/ignaciolb">Mi LinkedIn</a></p>
-                                </div>
+                        <div class="col s12">
+                            <div class="row">
+                                <blockquote class="flow-text presentacion">Esta página nace con el objetivo de mostrar los trabajos realizados durante el grado superior de <a href="images/N3_IFCD0210_es_pub.pdf" target='_blank'> Desarrollo de Aplicaciones Web</a> en el <a href="http://www.iesaguadulce.es/centro/" target='_blank'>I.E.S. Aguadulce</a>, además de una oportunidad de desarrollar los contenidos aprendidos.</blockquote> 
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>  
@@ -55,8 +68,8 @@
         <div class="container">
             <div id="opcion" class="row">
                 <div id="opcion1" class="col s12 m3 center">
-                    <a href="" class=" z-depth-4"><i class="material-icons">web</i><br /> HTML + CSS</a>
-                    <ul class="menuOculto white-text">
+                    <a class="opciones" href=""><i class="material-icons">web</i><br /> HTML + CSS</a>
+                    <ul id="pr" class="menuOculto white-text">
                         <li><a href="paginas/opcion1/VelocidadCss/ejercicio3_3.html" title="">Velocidades CSS</a></li>
                         <li><a href="paginas/opcion1/GirasolCSS/girasol.html" title="">Girasol CSS</a></li>
                         <li><a href="paginas/opcion1/Clinica/clinica.html" title="Web realizada poco a poco con HTML y CSS en Diseño de interfaces y finalizada con retoques de Boostrap para ser responsiva">Clínica Bootstrap Responsiva</a></li>
@@ -64,20 +77,20 @@
                     </ul>
                 </div>
                 <div id="opcion2" class="col s12 m3 center">
-                    <a href="" class=" z-depth-4"><i class="material-icons">developer_mode</i><br />Desarrollo Cliente</a>
+                    <a class="opciones" href=""><i class="material-icons">developer_mode</i><br />Desarrollo Cliente</a>
                     <ul class="menuOculto">
                         <li><a href="paginas/opcion2/congresoDeLosImputados/Ejercicio5.html" title="">Congreso de los imputados con JavaScript</a></li>
                         <li><a href="paginas/opcion2/RelojCSS/ejercicio1.html">Reloj CSS + JavaScript</a></li>
                     </ul>
                 </div>
                 <div id="opcion3" class="col s12 m3 center">
-                    <a href="" class=" z-depth-4"><i class="material-icons">storage</i><br />Desarrollo Servidor</a>
+                    <a class="opciones" href=""><i class="material-icons">storage</i><br />Desarrollo Servidor</a>
                     <ul class="menuOculto">
-                        <li><a href="" title="Banco realizado con conocimientos básicos de PHP, sin acceso a base de datos, ni sesiones, ni cookies">Banco PHP - sin BD</a></li>
+                        <li><a href="paginas/opcion3/Banco/index.php" title="Banco realizado con conocimientos básicos de PHP, sin acceso a base de datos, ni sesiones, ni cookies">Banco PHP - sin BD</a></li>
                     </ul>
                 </div>
-                <div id="opcion4" class="col s12 m3 center">
-                    <a href="" class=" z-depth-4"><i class="material-icons">description</i><br />Otros/Manuales</a>
+                <div id="opcion4" class="col s12 m3 center" name="redSocial">
+                    <a class="opciones" href=""><i class="material-icons">description</i><br />Otros / Manuales</a>
                     <ul class="menuOculto">
                         <li><a href="https://youtu.be/e5mUw2Mi8oI" title="Proyecto final del curso realizado a distancia con www.campusseas.com">Enlace a TPV Java</a></li>
                         <li><a href="paginas/opcion4/Manuales/" title="Varios">Manuales</a></li>
@@ -89,6 +102,7 @@
             https://geekytheory.com/como-usar-la-api-de-twitter-en-php -->
             
            <div class="divider" id="divisorRedSocial"></div> 
+           
             <div class="row center" id="redSocial">
                 
 
@@ -96,10 +110,11 @@
             
             <!-- **************** SECCION DE CONTACTO  *****************   -->
             
-            <div class="divider"></div>
-            <div class="row" id="contacto" name="contacto">           <!-- Sección de contacto -->
+            <div class="divider" id="divisorContacto"></div>
+
+            <div class="row" id="contacto">           <!-- Sección de contacto -->
                 <h5>Contacto</h5>
-                <form class="col s12" id="form">
+                <form class="col s12 " id="form">
                     <div class="row">
                         <div class="input-field col m6 s10">
                             <input id="nombre" type="text" name="nombre" class="validate" required minlength="3" />
@@ -122,7 +137,7 @@
                             <label for="acepta">Acepta que sus datos sean almacenados</label>
                         </div>
                         <div class="input-field col s12 m6">
-                            <input type="submit" class="btn-large" id="enviar" value="Enviar" disabled="true" />
+                            <input type="submit" class="btn-large light-blue" id="enviar" value="Enviar" disabled="true" />
                         </div>
                         <div class="card-panel" id="ultimaFila"></div>
                     </div>
@@ -130,14 +145,21 @@
             </div>
         </div>
 
-        <footer class="page-footer teal darken-2 valign-wrapper">
+        <footer class="page-footer light-blue valign-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col l6 s6" id="footerIzq">
-                       <p class="white-text"><a title="Contacto" class="grey-text text-lighten-4" href="#contacto"><i class="material-icons">feedback</i></a> &nbsp;&nbsp;  <a title="Mi cuenta GitHub" href="https://github.com/NatxosS"><img src="images/GitHub-Mark/PNG/GitHub-Mark-Light-32px.png" /></a></p>
+                    <div class="col l2 s2" id="footerIzq">
+                       
                     </div>
-                    <div class="col l4 offset-l2 s6">
-                        <p class="white-text"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img class="img-responsive" alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a></p>
+                    <div class="col l2 offset-l4 s3" id="imagenCC">
+                        <p class="white-text center-align">
+                            <a  id="enlaceCC" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target='_blank'>
+                                <img class="img-responsive" alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
+                            </a>
+                        </p>
+                    </div>
+                    <div class="col l4 s7" id="animacion">
+                        <span class="white-text" > Autor: Ignacio López Ballesteros</span>
                     </div>
                 </div>
              </div>

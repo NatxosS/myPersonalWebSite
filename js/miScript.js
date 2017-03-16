@@ -7,9 +7,10 @@ var nombre;     // creamos estas variables globales para usarlas en diferentes p
 var email;
 var texto;
 
-
 $(function () {
     // llamamos al archivo PHP showTweets
+    
+    $(".button-collapse").sideNav();
 
     $.ajax({
         url: "include/mostrarTweets.php", // y los mandamos a esta URL
@@ -94,5 +95,22 @@ $(function () {
         }
 
     });
-
+    
+    $("footer").hover(function () {     // hover sobre el footer
+        $("#imagenCC").animate({        // desplazamos la imagen de creative commons a la izquierda
+            'margin-left': '-50px'
+        }, 500, "swing");
+        $("#animacion").animate({       // desplazamos el texto hacia a la derecha y quitamos su opacidad
+            opacity: '1',
+            'margin-left': '0px'
+        }, 500, "swing");
+    }, function () {                // al salir del hover deshacemos lo anterior
+        $("#imagenCC").animate({
+            'margin-left': '20px'
+        }, 1000, "swing");
+        $("#animacion").animate({
+            opacity: '0',
+            'margin-left': '-30px'
+        }, 1000, "swing");
+    });
 });

@@ -122,7 +122,7 @@ class Twitter {
     
     public function mostrarCabecera($rawdata) {
         
-        return '<div class="chip"><img src="'.$rawdata[0][1].'" alt="" />'.$rawdata[0][2].'</div><h5> Mis últimos Tweet\'s</h5><div class="divider"></div> ';
+        return '<div class="center-align"><img class="circle" src="'.$rawdata[0][1].'" alt="foto de mi perfil en Twitter" /><h5 id="perfil"> &nbsp;&nbsp;'.$rawdata[0][2].'</h5></div><h5> Conexión API Twitter</h5><br /><div class="divider"></div><br /> ';
     }
     
         // switch para sacar el mes en numero con las 3 letras que nos da twitter
@@ -197,7 +197,7 @@ class Twitter {
                 $cadenaPartida[$i] = "<a href='https://twitter.com/".substr($cadenaPartida[$i], 1)."' target='_blanck'>".$cadenaPartida[$i]."</a>";
             }
             if (preg_match("/^#/", $cadenaPartida[$i])) {
-                $cadenaPartida[$i] = "<a href='https://twitter.com/hashtag/".substr($cadenaPartida[$i], 1)."?src=hash' target='_blanck'>".$cadenaPartida[$i]."</a>";
+                $cadenaPartida[$i] = "<a href='https://twitter.com/hashtag/".substr($cadenaPartida[$i], 1)."?src=hash' target='_blank'>".$cadenaPartida[$i]."</a>";
             }
         }
         

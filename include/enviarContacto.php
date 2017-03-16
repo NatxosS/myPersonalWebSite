@@ -42,7 +42,7 @@ if (isset($_POST['nombre']) && isset($_POST['suEmail']) && isset($_POST['texto']
     if ($registros = $database->query($sql)) {
         $jsondata["success"] = true;
         enviarEmail($email);
-        $jsondata["data"] = "Se envío y registro correctamente el contacto, recibira respuesta lo antes posible";
+        $jsondata["data"] = "Su contacto ha sido enviado y registrado correctamente.";
     } else {
         $jsondata["success"] = false;
         $jsondata["data"] = $error;
