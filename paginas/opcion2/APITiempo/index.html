@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>El tiempo de tu ciudad</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="estilo.css" /> 
+    <link rel="icon" type="image/png" href="/img/mifavicon.png" />
+</head>
+<body>
+    <div class="container">
+        <h1>EL TIEMPO EN TU LOCALIDAD</h1>
+
+          <div class="row">
+            <form class="col s12" id="formulario" >
+              <div class="row">
+                <div class="input-field col s12 m9">
+                  <input placeholder="Tu ciudad..." id="localidad" type="text" class="validate" tabindex="1" />
+                  <label for="localidad">Localidad:</label>
+                </div>
+                <div class="input-field col s12 m3">
+                    <input type="submit" id="conUbicacion" value="Por ubicación" class="btn" tabindex="4" />
+                </div>
+            </div>
+            <div class="row">    
+                <div class="input-field col s12 m4 l3">
+                    <input type="submit" id="hoy" value="Tiempo actual" class="btn" tabindex="2" />
+                </div>
+                <div class="input-field col s12 m4 l3">
+                    <input type="submit" id="manana" value="Tiempo mañana" class="btn" tabindex="3" />
+                </div>
+            </div>
+            </form>
+          </div>
+
+        <div class="row" id="resultado">
+            <div class="col s12 m4 l3 center-align" id="cajaHoy">
+                
+            </div>
+            <div class="col s12 m4 l3 center-align" id="cajaManana">
+                
+            </div>
+        
+            <div class="col s12 m10 l6" id="mapa">
+
+            </div>
+        </div>
+        <h6> <a id="volver" href="../../../index.php">  Volver a ignaciolb.es</a></h6>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script>
+        $(document).ready(function() {
+            Materialize.updateTextFields();
+        });
+    </script>
+</body>
+</html>

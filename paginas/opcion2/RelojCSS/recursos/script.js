@@ -43,7 +43,8 @@ $(function () {
     var segundos = hora.getSeconds();
     var horas = hora.getHours();
 
-    // teniendo en cuenta que 360/60 = 6 grados son 1 segundo y que los 00 segundos son 270deg, 01 segundos son 276deg
+    // teniendo en cuenta que 360/60 = 6 grados son 1 segundo y 
+    // que los 00 segundos son 270deg, 01 segundos son 276deg
     var gradosS = (segundos * 6 + 270);
 
     $("#segundero").css({// asignamos a la propiedad rotate los minutos y segundos hallados

@@ -1,0 +1,17 @@
+figcaption {
+    text-align: center;
+}
+#mapa {
+    width: 400px;
+    height: 275px;
+}
+h3 {
+    text-align: right;
+    vertical-align: center;
+}
+#volver {
+    font-family: arial black;
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    padding: 5px;
+}

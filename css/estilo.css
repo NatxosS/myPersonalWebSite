@@ -40,30 +40,27 @@
 }
 
 nav {
-    height: 75px;
+    height: 65px;
 }
 nav div ul li a {
     font-size: 1.5em;
     display: block;
-    /*height: 100%;*/
-}
-#menuWeb {
-    height: 75px;
-    display: block
+    height: 65px;
 }
 
 footer {
-    /*position: fixed !important; */
-    bottom: 0!important; 
     width: 100%;
     height: 80px;
     z-index: 99;
 }
-body {
-   /* overflow-y: hidden;*/
-}
+
 #presentacion {
     margin-top: 20px
+}
+#miFoto {
+    max-width: 200px;
+    margin-top: 30px;
+    margin-left: 40px;
 }
 .container #opcion {
 	font-size: 2em !important;
@@ -90,22 +87,22 @@ body {
     
     -webkit-transition: display 0.75s ease,
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
-        transform 0.75s 1s ease-in-out,
+        transform 0.5s 1s ease-in-out,
         filter 1s ease;
     -moz-transition: display 0.75s ease,
-        transform 0.75s ease, 
+        transform 0.5s ease, 
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
         filter 1s ease;
 
-    -o-transition:  transform 0.75s ease,
+    -o-transition:  transform 0.5s ease,
         display 1s ease,
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
         filter 1s ease;
-    -ms-transition: transform 0.75s ease,
+    -ms-transition: transform 0.5s ease,
         display 1s ease,
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
         filter 1s ease;
-    transition: transform 0.75s ease,
+    transition: transform 0.5s ease,
         display 1s 1s ease,
         background-color 2s cubic-bezier(0,1.2,.5,-0.35),
         filter 1s ease;
@@ -138,10 +135,7 @@ body {
 blockquote{
   margin: 20px 0;
   padding-left: 1.5rem;
-  border-left: 5px solid #03a9f4; 
-}
-.cajaEnlace {
-    margin-top: -20px;
+  border-left: 5px solid #0277bd; 
 }
 .presentacion {
     font-size: 1.25em
@@ -166,6 +160,6 @@ blockquote{
 }
 
 .filled-in[type="checkbox"].filled-in:checked + label:after{
-     border: 2px solid #03a9f4;
-     background-color: #03a9f4;
+     border: 2px solid #0277bd;
+     background-color: #0277bd;
 }

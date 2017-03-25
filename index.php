@@ -4,8 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <title>Ignacio López Ballesteros</title>
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> 
         <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css"  media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link type="text/css" rel="stylesheet" href="css/estilo.css" />
 
@@ -17,20 +18,16 @@
     
     <body>
         <header>
-            <div >
+            <div class="navbar-fixed">
                 <nav>
-                    <div class="nav-wrapper light-blue">
-                        <a href="#!" class="brand-logo center">PROGRAMADOR <span class="hide-on-small-only">WEB</span></a>
-                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                        <ul class="right hide-on-med-and-down" id="menuWeb">
-                            <li><a title="Contacto" href="#divisorContacto"><i class="fa fa-comments" aria-hidden="true"></i></a></li>
-                            <li><a title="Mi cuenta GitHub" href="https://github.com/NatxosS" target='_blank'><i class="fa fa-github" aria-hidden="true"></i></a></li>
-                            <li><a title="Conexión API Twitter"href="#divisorRedSocial"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        </ul>
-                        <ul class="side-nav" id="mobile-demo">
-                            <li><a href="#divisorContacto"><i class="fa fa-comments" aria-hidden="true"></i>&nbsp;Contacto</a></li>
-                            <li><a href="https://github.com/NatxosS" target='_blank'><i class="fa fa-github" aria-hidden="true"></i>&nbsp;GitHub</a></li>
-                            <li><a href="#divisorRedSocial"><i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;API Twitter</a></li>
+                    <div class="nav-wrapper light-blue darken-3">
+                        <a href="#" class="brand-logo center hide-on-small-only">PROGRAMADOR WEB</a>
+
+                        <ul class="right" id="menuWeb">
+                            <li><a class="enlace" title="Conexión API Twitter" href="https://www.linkedin.com/in/ignaciolb/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <li><a class="enlace" title="Mi cuenta GitHub" href="https://github.com/NatxosS" target='_blank'><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                            <li><a class="enlace" title="Conexión API Twitter" href="#divisorRedSocial"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a class="enlace" title="Contacto" href="#divisorContacto"><i class="fa fa-comments" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </nav>
@@ -40,15 +37,10 @@
         <!-- **************** SECCION DE PRESENTACIÓN  *****************   -->
         <div class="container-fluid">
             <div class="row" id="presentacion">
-                <div class="col s3 offset-s2 m3 offset-m1">
-                    <div class="row cajaImagen">
-                        <div class="col m9 offset-m1 s12"><img src="images/yo.jpg.jpg" alt="Mi foto" class="circle responsive-img"></div>
-                    </div>
-                    <div class="row cajaEnlace">
-                        <h4 class="flow-text center-align"><a href="https://www.linkedin.com/in/ignaciolb" target='_blank'>LinkedIn</a></h4>
-                    </div>
+                <div class="col s3 offset-s1 m3 offset-m1 l3 offset-l1">
+                    <img id="miFoto" src="images/yo.jpg.jpg" alt="Mi foto" class="circle responsive-img">
                 </div>
-                <div class="col s8 offset-s1 m6">
+                <div class="col s8 offset-s1 m6 offset-m2 l6">
                     <div class="row">
                         <p class="flow-text">Ignacio López Ballesteros</p>
                     </div>
@@ -68,7 +60,7 @@
         <div class="container">
             <div id="opcion" class="row">
                 <div id="opcion1" class="col s12 m3 center">
-                    <a class="opciones" href=""><i class="material-icons">web</i><br /> HTML + CSS</a>
+                    <a class="opciones"><i class="material-icons">web</i><br /> HTML + CSS</a>
                     <ul id="pr" class="menuOculto white-text">
                         <li><a href="paginas/opcion1/VelocidadCss/ejercicio3_3.html" title="">Velocidades CSS</a></li>
                         <li><a href="paginas/opcion1/GirasolCSS/girasol.html" title="">Girasol CSS</a></li>
@@ -77,22 +69,25 @@
                     </ul>
                 </div>
                 <div id="opcion2" class="col s12 m3 center">
-                    <a class="opciones" href=""><i class="material-icons">developer_mode</i><br />Desarrollo Cliente</a>
+                    <a class="opciones"><i class="material-icons">developer_mode</i><br />Desarrollo Cliente</a>
                     <ul class="menuOculto">
-                        <li><a href="paginas/opcion2/congresoDeLosImputados/Ejercicio5.html" title="">Congreso de los imputados con JavaScript</a></li>
-                        <li><a href="paginas/opcion2/RelojCSS/ejercicio1.html">Reloj CSS + JavaScript</a></li>
+                        <li><a href="paginas/opcion2/congresoDeLosImputados/Ejercicio5.html" title="Tarea con objetos de JavaScript">Congreso de los imputados con JavaScript</a></li>
+                        <li><a href="paginas/opcion2/RelojCSS/ejercicio1.html" title="Reloj realizado con CSS y JavaScript">Reloj CSS + JavaScript</a></li>
+                        <li><a href="paginas/opcion2/APITiempo/index.html" title="El tiempo en su localidad con la API de OpenWeather y la geolocalización del navegador">API del tiempo</a></li>
                     </ul>
                 </div>
                 <div id="opcion3" class="col s12 m3 center">
-                    <a class="opciones" href=""><i class="material-icons">storage</i><br />Desarrollo Servidor</a>
+                    <a class="opciones"><i class="material-icons">storage</i><br />Desarrollo Servidor</a>
                     <ul class="menuOculto">
                         <li><a href="paginas/opcion3/Banco/index.php" title="Banco realizado con conocimientos básicos de PHP, sin acceso a base de datos, ni sesiones, ni cookies">Banco PHP - sin BD</a></li>
+                        <li><a href="https://github.com/NatxosS/myPersonalWebSite/tree/master/include" title="Conexión realizada a la API de twitter (AJAX - PHP - API Rest)">Conexión con API Twitter</a></li>
                     </ul>
                 </div>
-                <div id="opcion4" class="col s12 m3 center" name="redSocial">
+                <div id="opcion4" class="col s12 m3 center">
                     <a class="opciones" href=""><i class="material-icons">description</i><br />Otros / Manuales</a>
                     <ul class="menuOculto">
-                        <li><a href="https://youtu.be/e5mUw2Mi8oI" title="Proyecto final del curso realizado a distancia con www.campusseas.com">Enlace a TPV Java</a></li>
+                        <li><a href="https://youtu.be/e5mUw2Mi8oI" title="Proyecto final del curso realizado a distancia con www.campusseas.com">TPV Java</a></li>
+                        <li><a href="https://github.com/NatxosS/JuegoAhorcado" title="Juego ahorcado en Java para consola con animación final">Juego ahorcado animado</a></li>
                         <li><a href="paginas/opcion4/Manuales/" title="Varios">Manuales</a></li>
                     </ul>
                 </div>
@@ -127,7 +122,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="texto" name="texto" class="materialize-textarea validate" required minlength="15" /></textarea>
+                            <textarea id="texto" name="texto" class="materialize-textarea validate" required minlength="15"></textarea>
                             <label data-error="Texto erroneo (15 caracteres como mínimo)" data-success="correcto" for="texto">Introduzca su petición, sugerencia...</label>
                         </div>
                     </div>
@@ -137,7 +132,7 @@
                             <label for="acepta">Acepta que sus datos sean almacenados</label>
                         </div>
                         <div class="input-field col s12 m6">
-                            <input type="submit" class="btn-large light-blue" id="enviar" value="Enviar" disabled="true" />
+                            <input type="submit" class="btn-large light-blue darken-3" id="enviar" value="Enviar" disabled />
                         </div>
                         <div class="card-panel" id="ultimaFila"></div>
                     </div>
@@ -145,22 +140,10 @@
             </div>
         </div>
 
-        <footer class="page-footer light-blue valign-wrapper">
+        <footer class="page-footer light-blue darken-3 valign-wrapper">
             <div class="container">
                 <div class="row">
-                    <div class="col l2 s2" id="footerIzq">
-                       
-                    </div>
-                    <div class="col l2 offset-l4 s3" id="imagenCC">
-                        <p class="white-text center-align">
-                            <a  id="enlaceCC" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target='_blank'>
-                                <img class="img-responsive" alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" />
-                            </a>
-                        </p>
-                    </div>
-                    <div class="col l4 s7" id="animacion">
-                        <span class="white-text" > Autor: Ignacio López Ballesteros</span>
-                    </div>
+                    <span class="white-text" >Ignacio López Ballesteros &copy; 2017</span>
                 </div>
              </div>
         </footer>
@@ -169,5 +152,15 @@
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/miScript.js"></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-96103130-1', 'auto');
+        ga('send', 'pageview');
+
+</script>
 </body>
 </html>
